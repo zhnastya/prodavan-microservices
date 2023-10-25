@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>sellars</artifactId>
+    <artifactId>prodavan-controller</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Avito clone</name>
     <description>Avito clone</description>

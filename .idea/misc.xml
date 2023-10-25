@@ -8,6 +8,10 @@
         <option value="$PROJECT_DIR$/Avito/pom.xml" />
         <option value="$PROJECT_DIR$/../comments-service/pom.xml" />
         <option value="$PROJECT_DIR$/comments-service/pom.xml" />
+        <option value="$PROJECT_DIR$/base-service/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/image-service/pom.xml" />
+        <option value="$PROJECT_DIR$/product-service/pom.xml" />
       </list>
     </option>
   </component>
