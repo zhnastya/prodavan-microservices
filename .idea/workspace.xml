@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="904042a3-ef09-4df1-bd16-77df2d518afc" name="Changes" comment="fix: refactoring my old proj">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/src/main/proto/User.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/User.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$UserOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$UserOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$MethodHandlers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceBaseDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceBlockingStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceFileDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceFutureStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceImplBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceMethodDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/org/example/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/grpc-java/grpc/server/grpc_server/user/UserServiceGrpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/java/grpc/server/grpc_server/user/UserOuterClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/grpc-config-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/annotations.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/auth.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/backend.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/billing.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/client.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/config_change.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/consumer.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/context.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/control.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/distribution.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/documentation.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/endpoint.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/field_behavior.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/http.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/httpbody.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/label.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/launch_stage.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/log.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/logging.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/metric.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/monitored_resource.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/monitoring.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/quota.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/resource.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/service.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/source_info.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/system_parameter.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/usage.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/cloud/audit/audit_log.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/geo/type/viewport.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/logging/type/http_request.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/logging/type/log_severity.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/longrunning/operations.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/rpc/code.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/rpc/context/attribute_context.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/rpc/error_details.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/rpc/status.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/calendar_period.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/color.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/date.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/datetime.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/dayofweek.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/expr.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/fraction.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/latlng.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/money.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/postal_address.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/quaternion.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/timeofday.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/any.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/api.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/compiler/plugin.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/descriptor.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/duration.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/empty.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/field_mask.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/source_context.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/struct.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/timestamp.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/type.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/wrappers.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-plugins/protoc-3.6.1-windows-x86_64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-plugins/protoc-gen-grpc-java-1.22.1-windows-x86_64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/UserServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/configurations/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/configurations/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/model/enums/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserGrpcService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/test/java/com/example/user/UserServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/repository/ProductRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/GRpc-inter">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/GRpc-inter">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2XDprMwKzUwscYzE0AjWnLchPiH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Teстовая работа/prodavan-microservices/grpc-configurer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.291954&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Teстовая работа\prodavan-microservices\GRpc-inter\src\main" />
+      <recent name="D:\Teстовая работа\prodavan-microservices\test-client\src\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Teстовая работа\prodavan-microservices\grpc-configurer\src\main\proto" />
+      <recent name="D:\Teстовая работа\prodavan-microservices\user-service\src\main\proto" />
+      <recent name="D:\Teстовая работа\prodavan-microservices\grpc-interface\src\main" />
+      <recent name="D:\Teстовая работа\prodavan-microservices\grpc-interface\src" />
+      <recent name="D:\Teстовая работа\prodavan-microservices" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.products.repository" />
+      <recent name="com.example.products.model" />
+      <recent name="com.example.images.repository" />
+      <recent name="com.example.images.model" />
+      <recent name="com.example.user.model.enums" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.App" />
+      <module name="grrr" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="TestClientApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="teest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.testclient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.testclient" />
+      <option name="MAIN_CLASS_NAME" value="com.example.testclient.TestClientApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentsApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="filmorate" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.comments.CommentsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="comment" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.comments.CommentsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GrpcInterfaceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="grpc" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.grpc.GrpcInterfaceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GrpcInterfaceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="grpc-interface" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.grpcinterface.GrpcInterfaceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImageServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="images" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.images.ImageServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="product" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.products.ProductServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SellarsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="prodavan-controller" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.sellars.SellarsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="users" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.user.UserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.TestClientApplicationTests" />
+        <item itemvalue="HTTP Request.generated-requests | #3" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="904042a3-ef09-4df1-bd16-77df2d518afc" name="Changes" comment="" />
+      <created>1698173702905</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698173702905</updated>
+      <workItem from="1698173704012" duration="2559000" />
+      <workItem from="1698176291241" duration="10192000" />
+      <workItem from="1698219962503" duration="4299000" />
+      <workItem from="1698385065524" duration="16767000" />
+      <workItem from="1698506508726" duration="4615000" />
+      <workItem from="1698511650441" duration="1308000" />
+      <workItem from="1698522823819" duration="2838000" />
+      <workItem from="1698584723499" duration="2441000" />
+    </task>
+    <task id="LOCAL-00001" summary="fix: refactoring my old proj">
+      <option name="closed" value="true" />
+      <created>1698177070225</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698177070225</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix: refactoring my old proj">
+      <option name="closed" value="true" />
+      <created>1698220092564</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698220092564</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/image-service" />
+      <path value="$PROJECT_DIR$/product-service" />
+      <path value="$PROJECT_DIR$/user-service" />
+    </ignored-roots>
+    <MESSAGE value="fix: refactoring my old proj" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: refactoring my old proj" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
