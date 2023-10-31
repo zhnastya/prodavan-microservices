@@ -4,148 +4,400 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="904042a3-ef09-4df1-bd16-77df2d518afc" name="Changes" comment="fix: refactoring my old proj">
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/src/main/java/org/example/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/src/main/proto/User.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/User.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$UserOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequestOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponseOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponseOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequestOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User$Builder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$UserOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponseOrBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$MethodHandlers.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceBaseDescriptorSupplier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceBlockingStub.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceFileDescriptorSupplier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceFutureStub.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceImplBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceMethodDescriptorSupplier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceStub.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/org/example/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/grpc-java/grpc/server/grpc_server/user/UserServiceGrpc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/java/grpc/server/grpc_server/user/UserOuterClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/grpc-config-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/annotations.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/auth.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/backend.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/billing.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/client.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/config_change.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/consumer.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/context.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/control.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/distribution.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/documentation.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/endpoint.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/field_behavior.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/http.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/httpbody.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/label.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/launch_stage.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/log.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/logging.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/metric.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/monitored_resource.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/monitoring.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/quota.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/resource.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/service.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/source_info.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/system_parameter.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/api/usage.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/cloud/audit/audit_log.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/geo/type/viewport.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/logging/type/http_request.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/logging/type/log_severity.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/longrunning/operations.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/rpc/code.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/rpc/context/attribute_context.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/rpc/error_details.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/rpc/status.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/calendar_period.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/color.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/date.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/datetime.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/dayofweek.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/expr.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/fraction.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/latlng.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/money.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/postal_address.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/quaternion.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/e543df98e1fedd4e30dcc18a17328f93/google/type/timeofday.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/any.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/api.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/compiler/plugin.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/descriptor.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/duration.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/empty.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/field_mask.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/source_context.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/struct.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/timestamp.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/type.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-dependencies/eb3271f8a881e26b6cd5b546d60d02f0/google/protobuf/wrappers.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-plugins/protoc-3.6.1-windows-x86_64.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/protoc-plugins/protoc-gen-grpc-java-1.22.1-windows-x86_64.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/UserServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/configurations/CustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/configurations/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/model/enums/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserGrpcService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/test/java/com/example/user/UserServiceApplicationTests.java" afterDir="false" />
+    <list default="true" id="904042a3-ef09-4df1-bd16-77df2d518afc" name="Changes" comment="fix: add User-proto file">
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/src/main/proto/Product.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/Comment.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/Product.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentRequest$Comment$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentRequest$Comment$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentRequest$Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentRequest$CommentOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentResponse$Comment$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentResponse$Comment$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentResponse$Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentResponse$CommentOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$CreateCommentResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$ErrorResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$ErrorResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$ErrorResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$ErrorResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentResponse$Comment$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentResponse$Comment$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentResponse$Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentResponse$CommentOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass$FindByUserIdCommentResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentOuterClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc$CommentServiceBaseDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc$CommentServiceBlockingStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc$CommentServiceFileDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc$CommentServiceFutureStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc$CommentServiceImplBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc$CommentServiceMethodDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc$CommentServiceStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc$MethodHandlers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/comments/CommentServiceGrpc.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$FindAllByAttributeRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$FindAllByAttributeRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$FindAllByAttributeRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$FindAllByAttributeRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetPagesSizeRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetPagesSizeRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetPagesSizeRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetPagesSizeRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductByIdRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductByIdRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductByIdRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductByIdRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$Image$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$Image$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$Image.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$ImageOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$Product$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$Product$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse$ProductOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$GetProductResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$PagesSizeResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$PagesSizeResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$PagesSizeResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$PagesSizeResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$Image$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$Image$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$Image.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$ImageOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$Product$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$Product$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest$ProductOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass$SaveProductResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductOuterClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc$MethodHandlers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc$ProductServiceBaseDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc$ProductServiceBlockingStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc$ProductServiceFileDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc$ProductServiceFutureStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc$ProductServiceImplBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc$ProductServiceMethodDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc$ProductServiceStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/products/ProductServiceGrpc.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserRequest$User$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserRequest$UserOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$ErrorResponse$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$ErrorResponse$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$ErrorResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$ErrorResponseOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindAllUsersRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindAllUsersRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindAllUsersRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindAllUsersRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindByUserEmailRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindByUserEmailRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindByUserEmailRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindByUserEmailRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindByUserIdRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindByUserIdRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindUserByAttribute$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindUserByAttribute$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindUserByAttribute$User$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindUserByAttribute$User$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindUserByAttribute$User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindUserByAttribute$UserOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindUserByAttribute.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindUserByAttributeOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$UpdateUserRequest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$UpdateUserRequest$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$UpdateUserRequest$User$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$UpdateUserRequest$User$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$UpdateUserRequest$User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$UpdateUserRequest$UserOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$UpdateUserRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$UpdateUserRequestOrBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc$MethodHandlers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc$UserServiceBaseDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc$UserServiceBlockingStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc$UserServiceFileDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc$UserServiceFutureStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc$UserServiceImplBase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc$UserServiceMethodDescriptorSupplier.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc$UserServiceStub.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserServiceGrpc.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/grpc-java/comments/CommentServiceGrpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/grpc-java/products/ProductServiceGrpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/grpc-java/users/UserServiceGrpc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/java/comments/CommentOuterClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/java/products/ProductOuterClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/model/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/model/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/user/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/user/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/example/products/model/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/example/products/service/ProductGrpcService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/example/products/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/com/example/products/service/ProductServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71dd47c1-ab2f-475f-a761-feafd3c2db07.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/71dd47c1-ab2f-475f-a761-feafd3c2db07.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/71dd47c1-ab2f-475f-a761-feafd3c2db07/storage_v2/_src_/schema/sellars.0JHqdQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/71dd47c1-ab2f-475f-a761-feafd3c2db07/storage_v2/_src_/schema/sellars.0JHqdQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/Jenkinsfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/Comment.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/src/main/proto/Comment.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/SellarsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/configurations/OpenApiConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/configurations/RabbitConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/configurations/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/controller/ErrorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/controller/ImageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/controller/MyRoomController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/controller/SecurityController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/exeption/FeignClientException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/exeption/NotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/exeption/ValidationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/model/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/model/ErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/model/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/model/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/model/enums/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/repository/ImageRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/repository/ProductRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/email/DefaultEmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/feign/CustomClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/feign/FeignClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/product/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/product/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/rabbit/RabbitService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/rabbit/RabbitServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/room/MyRoomService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/room/MyRoomServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/user/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/user/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/java/com/example/sellars/service/user/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/GolosText-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/GolosText-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/GolosText-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/bootstrap-icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/hand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/productPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/rabbit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/rodjer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/admin.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/comment.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/create-product.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/header.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/headerUser.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/likes-product.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/login.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/map.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/my-comments.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/my-room_product.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/myProducts.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/myRoom.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/page.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/pagination.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/product-info.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/products.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/registration.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/reset.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/update-product.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/update-user.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/user-edit.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/main/resources/templates/user-info.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/src/test/java/com/example/sellars/SellarsApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/SellarsApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/configurations/OpenApiConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/configurations/RabbitConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/configurations/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/controller/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/controller/ErrorHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/controller/ImageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/controller/MyRoomController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/controller/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/controller/SecurityController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/exeption/FeignClientException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/exeption/NotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/exeption/ValidationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/model/Comment$CommentBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/model/Comment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/model/ErrorResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/model/Image.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/model/enums/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/repository/ImageRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/repository/ProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/email/DefaultEmailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/feign/CustomClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/feign/FeignClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/product/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/product/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/rabbit/RabbitService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/rabbit/RabbitServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/room/MyRoomService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/room/MyRoomServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/user/CustomUserDetailsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/user/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/com/example/sellars/service/user/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/GolosText-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/GolosText-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/GolosText-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/bootstrap-icons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/hand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/productPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/rabbit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/rodjer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/admin.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/comment.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/create-product.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/header.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/headerUser.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/likes-product.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/login.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/map.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/my-comments.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/my-room_product.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/myProducts.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/myRoom.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/page.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/pagination.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/product-info.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/products.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/registration.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/reset.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/update-product.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/update-user.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/user-edit.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/base-service/target/classes/templates/user-info.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/src/main/proto/User.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/src/main/proto/User.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/User.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/User.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserRequest$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserRequest$User$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$User.class" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserRequest$User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest$UserOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserRequestOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserResponse$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$CreateUserResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$CreateUserResponseOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$ErrorResponseOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindByUserIdRequest$Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/classes/users/UserOuterClass$FindByUserIdRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdRequestOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse$UserOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass$FindByUserIdResponseOrBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserOuterClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$MethodHandlers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceBaseDescriptorSupplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceBlockingStub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceFileDescriptorSupplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceFutureStub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceImplBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceMethodDescriptorSupplier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc$UserServiceStub.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/classes/grpc/server/grpc_server/user/UserServiceGrpc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/grpc-java/grpc/server/grpc_server/user/UserServiceGrpc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/java/grpc/server/grpc_server/user/UserOuterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/generated-sources/protobuf/java/users/UserOuterClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-configurer/target/proto-common-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-configurer/target/proto-common-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/model/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/model/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/repository/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/repository/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/example/products/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/example/products/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/example/products/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/example/products/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/configurations/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/user/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/configurations/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/image-service/src/main/java/com/example/images/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/model/enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/model/enums/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserGrpcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserGrpcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/user/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,6 +451,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -210,45 +465,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Teстовая работа/prodavan-microservices/grpc-configurer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.291954&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "android.gradle.sync.needed": "true",
+    "git-widget-placeholder": "refactoring",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "D:/Teстовая работа/prodavan-microservices/product-service/src/main/java/com/example/products/service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.291954",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Teстовая работа\prodavan-microservices\product-service\src\main\java\com\example\products\service" />
+      <recent name="D:\Teстовая работа\prodavan-microservices\image-service\src\main\java\com\example\images\model" />
+      <recent name="D:\Teстовая работа\prodavan-microservices\image-service\src\main\java\com\example\images" />
       <recent name="D:\Teстовая работа\prodavan-microservices\GRpc-inter\src\main" />
       <recent name="D:\Teстовая работа\prodavan-microservices\test-client\src\main" />
     </key>
@@ -260,11 +519,11 @@
       <recent name="D:\Teстовая работа\prodavan-microservices" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.products.repository" />
       <recent name="com.example.products.model" />
+      <recent name="com.example.images.config" />
+      <recent name="com.example.products.repository" />
       <recent name="com.example.images.repository" />
       <recent name="com.example.images.model" />
-      <recent name="com.example.user.model.enums" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -274,7 +533,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Spring Boot.SellarsApplication">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="grrr" />
@@ -292,6 +551,9 @@
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="TestClientApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -369,6 +631,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #4" />
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.TestClientApplicationTests" />
         <item itemvalue="HTTP Request.generated-requests | #3" />
@@ -392,6 +655,7 @@
       <workItem from="1698511650441" duration="1308000" />
       <workItem from="1698522823819" duration="2838000" />
       <workItem from="1698584723499" duration="2441000" />
+      <workItem from="1698597431345" duration="34580000" />
     </task>
     <task id="LOCAL-00001" summary="fix: refactoring my old proj">
       <option name="closed" value="true" />
@@ -409,7 +673,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698220092564</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix: add User-proto file">
+      <option name="closed" value="true" />
+      <created>1698597557620</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698597557620</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: add User-proto file">
+      <option name="closed" value="true" />
+      <created>1698597574847</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698597574847</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,8 +726,24 @@
       <path value="$PROJECT_DIR$/user-service" />
     </ignored-roots>
     <MESSAGE value="fix: refactoring my old proj" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: refactoring my old proj" />
+    <MESSAGE value="fix: add User-proto file" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add User-proto file" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/image-service/src/main/java/com/example/images/UserController.java</url>
+          <line>17</line>
+          <properties class="com.example.images.UserController" method="userInfo">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,6 +1,7 @@
 package com.example.products.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,10 +9,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
@@ -47,25 +50,24 @@ public class Product {
             mappedBy = "product")
     private List<Image> images = new ArrayList<>();
 
-    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-    @JoinColumn
-    private User user;
-
-    @ManyToMany(mappedBy = "likesProd")
-    private List<User> likeUsers = new ArrayList<>();
+//    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+//    @JoinColumn
+//    private User user;
+//
+//    @ManyToMany(mappedBy = "likesProd")
+//    private List<User> likeUsers = new ArrayList<>();
 
     @PrePersist
     private void init() {
         dateOfCreated = LocalDateTime.now();
     }
 
-
-    public void addImageToProduct(Image image) {
-        image.setProduct(this);
-        images.add(image);
-    }
-
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void addImageToProduct(Image image) {
+        this.images.add(image);
+        image.setProduct(this);
     }
 }

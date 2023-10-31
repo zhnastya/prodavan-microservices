@@ -1,4 +1,5 @@
 syntax = "proto3";
+option java_package = "users";
 
 package grpc.server.grpc_server.user;
 import "google/protobuf/timestamp.proto";
@@ -15,14 +16,32 @@ message CreateUserRequest {
 }
 
 message CreateUserResponse{
-  int64 id =1;
+  int64 id = 1;
 }
 
 message FindByUserIdRequest {
   int64 userId = 1;
 }
 
-message FindByUserIdResponse {
+message FindByUserEmailRequest {
+  string email = 1;
+}
+
+message FindAllUsersRequest {
+}
+
+message UpdateUserRequest {
+  User user = 1;
+
+  message User {
+    string email = 2;
+    string phoneNum = 3;
+    string name = 4;
+    string password = 5;
+  }
+}
+
+message FindUserByAttribute {
   User user = 1;
 
   message User {
@@ -42,5 +61,8 @@ message ErrorResponse {
 
 service UserService {
   rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
-  rpc FindByUserId (FindByUserIdRequest) returns (FindByUserIdResponse);
+  rpc FindByUserId (FindByUserIdRequest) returns (FindUserByAttribute);
+  rpc FindByEmail (FindByUserEmailRequest) returns (FindUserByAttribute);
+  rpc FindAllUsers(FindAllUsersRequest) returns (stream FindUserByAttribute);
+  rpc UpdateUser(UpdateUserRequest) returns (FindUserByAttribute);
 }

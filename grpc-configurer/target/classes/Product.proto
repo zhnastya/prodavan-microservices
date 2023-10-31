@@ -1,0 +1,84 @@
+syntax = "proto3";
+option java_package = "products";
+
+package grpc.server.grpc_server.product;
+import "google/protobuf/timestamp.proto";
+
+message SaveProductRequest {
+  Product product = 1;
+  repeated Image images = 2;
+  message Product {
+    int64 id = 1;
+    string title = 2;
+    string description = 3;
+    int32 price = 4;
+    string city = 5;
+    string category = 6;
+  }
+  message Image {
+    string name = 2;
+    string originalFileName = 3;
+    int64 size = 4;
+    string contentType = 5;
+    bool isPreviewImage = 6;
+    bytes bytes = 7;
+  }
+}
+
+message SaveProductResponse {
+  int64 id = 1;
+}
+
+message GetProductByIdRequest{
+  int64 id = 1;
+}
+
+message GetProductResponse{
+  Product product = 1;
+  repeated Image images = 2;
+  message Product {
+    int64 id=1;
+    string title = 2;
+    string description = 3;
+    int32 price = 4;
+    string city = 5;
+    string category = 6;
+    int64 previewImageId = 7;
+  }
+  message Image {
+    int64 id=1;
+    string name = 2;
+    string originalFileName = 3;
+    int64 size = 4;
+    string contentType = 5;
+    bool isPreviewImage = 6;
+    bytes bytes = 7;
+  }
+}
+
+message FindAllByAttributeRequest{
+  int32 offset = 1;
+  int32 limit = 2;
+  int32 sortField = 3;
+  string category = 4;
+  string title = 5;
+  string city = 6;
+}
+
+message GetPagesSizeRequest{
+  int32 limit = 1;
+  string category = 2;
+  string title = 3;
+}
+
+message PagesSizeResponse{
+  int32 size = 1;
+}
+
+service ProductService {
+  rpc CreateProduct (SaveProductRequest) returns (SaveProductResponse);
+  rpc GetProductById (GetProductByIdRequest) returns (GetProductResponse);
+  rpc FindAllByAttribute (FindAllByAttributeRequest) returns (stream GetProductResponse);
+  rpc FindByCity(FindAllByAttributeRequest) returns (stream GetProductResponse);
+  rpc GetPagesSize(GetPagesSizeRequest) returns (PagesSizeResponse);
+}

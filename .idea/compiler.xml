@@ -7,9 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="product" />
-        <module name="images" />
         <module name="comment" />
         <module name="proto-common" />
+        <module name="prodavan-controller" />
         <module name="users" />
       </profile>
     </annotationProcessing>
@@ -25,6 +25,7 @@
       <module name="GRPC-interface" target="1.7" />
       <module name="grrr" target="1.7" />
       <module name="image-service" target="11" />
+      <module name="images" target="11" />
       <module name="product-service" target="11" />
       <module name="teest" target="11" />
       <module name="test-client" target="17" />
@@ -40,7 +41,7 @@
       <module name="grpc-interface" options="-parameters" />
       <module name="image-service" options="-parameters" />
       <module name="images" options="-parameters" />
-      <module name="prodavan-controller" options="" />
+      <module name="prodavan-controller" options="-parameters" />
       <module name="product" options="-parameters" />
       <module name="product-service" options="-parameters" />
       <module name="teest" options="-parameters" />
