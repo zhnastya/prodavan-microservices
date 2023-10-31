@@ -6,19 +6,48 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sellars" />
+        <module name="product" />
         <module name="comment" />
+        <module name="proto-common" />
+        <module name="prodavan-controller" />
+        <module name="users" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="filmorate" target="11" />
+      <module name="grpc" target="17" />
+      <module name="grpc-config" target="16" />
+      <module name="grpc-configurer" target="11" />
+      <module name="GRpc-inter" target="17" />
+      <module name="GRpc-inter.main" target="17" />
+      <module name="GRpc-inter.test" target="17" />
+      <module name="grpc-interface" target="1.8" />
+      <module name="GRPC-interface" target="1.7" />
+      <module name="grrr" target="1.7" />
+      <module name="image-service" target="11" />
+      <module name="images" target="11" />
+      <module name="product-service" target="11" />
+      <module name="teest" target="11" />
+      <module name="test-client" target="17" />
+      <module name="user" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="comment" options="-parameters" />
       <module name="filmorate" options="-parameters" />
-      <module name="sellars" options="-parameters" />
+      <module name="grpc" options="-parameters" />
+      <module name="grpc-configurer" options="-parameters" />
+      <module name="grpc-interface" options="-parameters" />
+      <module name="image-service" options="-parameters" />
+      <module name="images" options="-parameters" />
+      <module name="prodavan-controller" options="-parameters" />
+      <module name="product" options="-parameters" />
+      <module name="product-service" options="-parameters" />
+      <module name="teest" options="-parameters" />
+      <module name="test-client" options="-parameters" />
+      <module name="user" options="-parameters" />
+      <module name="users" options="-parameters" />
     </option>
   </component>
 </project>

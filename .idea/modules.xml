@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../base-service/prodavan-controller.iml" filepath="$PROJECT_DIR$/../base-service/prodavan-controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/prodavan-microservices.iml" filepath="$PROJECT_DIR$/.idea/prodavan-microservices.iml" />
     </modules>
   </component>
