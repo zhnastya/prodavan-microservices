@@ -19,6 +19,53 @@ message CreateUserResponse{
   int64 id = 1;
 }
 
+message SaveImageUserRequest{
+  int64 userId = 1;
+  Image image = 2;
+
+  message Image {
+    string name = 2;
+    string originalFileName = 3;
+    int64 size = 4;
+    string contentType = 5;
+    bytes bytes = 7;
+  }
+}
+
+message UpdateImageUserRequest{
+  int64 userId = 1;
+  Image image = 2;
+
+  message Image {
+    string name = 2;
+    string originalFileName = 3;
+    int64 size = 4;
+    string contentType = 5;
+    bytes bytes = 7;
+  }
+}
+
+message GetAvatarRequest{
+  int64 userId=1;
+}
+
+message GetAvatarResponse{
+  Image image = 1;
+
+  message Image {
+    int64 id =1;
+    string name = 2;
+    string originalFileName = 3;
+    int64 size = 4;
+    string contentType = 5;
+    bytes bytes = 7;
+  }
+}
+
+message SaveImageResponse{
+  bool isSaved = 1;
+}
+
 message FindByUserIdRequest {
   int64 userId = 1;
 }
@@ -65,4 +112,7 @@ service UserService {
   rpc FindByEmail (FindByUserEmailRequest) returns (FindUserByAttribute);
   rpc FindAllUsers(FindAllUsersRequest) returns (stream FindUserByAttribute);
   rpc UpdateUser(UpdateUserRequest) returns (FindUserByAttribute);
+  rpc SaveAvatar(SaveImageUserRequest) returns (SaveImageResponse);
+  rpc UpdateAvatar(UpdateImageUserRequest) returns (SaveImageResponse);
+  rpc GetAvatar(GetAvatarRequest) returns (GetAvatarResponse);
 }

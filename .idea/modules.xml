@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../base-service/prodavan-controller.iml" filepath="$PROJECT_DIR$/../base-service/prodavan-controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/prodavan-microservices.iml" filepath="$PROJECT_DIR$/.idea/prodavan-microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product-service/product.iml" filepath="$PROJECT_DIR$/product-service/product.iml" />
     </modules>
   </component>
 </project>

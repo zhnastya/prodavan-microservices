@@ -49,25 +49,15 @@ public class User {
     @Column(name = "dateOfCreated")
     private LocalDateTime dateOfCreated;
 
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "image_id")
-//    private Image avatar;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "avatar_id")
+    private Avatar avatar;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
-
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
-//    private List<Product> products = new ArrayList<>();
-//
-//    @ManyToMany
-//    @JoinTable(
-//            name = "prod_like",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "product_id"))
-//    private Set<Product> likesProd;
 
 
     @PrePersist

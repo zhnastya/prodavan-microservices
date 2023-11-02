@@ -25,6 +25,7 @@
       <module name="GRPC-interface" target="1.7" />
       <module name="grrr" target="1.7" />
       <module name="image-service" target="11" />
+      <module name="image-serviceRPC" target="11" />
       <module name="images" target="11" />
       <module name="product-service" target="11" />
       <module name="teest" target="11" />
@@ -40,6 +41,7 @@
       <module name="grpc-configurer" options="-parameters" />
       <module name="grpc-interface" options="-parameters" />
       <module name="image-service" options="-parameters" />
+      <module name="image-serviceRPC" options="-parameters" />
       <module name="images" options="-parameters" />
       <module name="prodavan-controller" options="-parameters" />
       <module name="product" options="-parameters" />

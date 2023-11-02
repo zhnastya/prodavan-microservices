@@ -18,12 +18,16 @@
         <option value="$PROJECT_DIR$/test-client/pom.xml" />
         <option value="$PROJECT_DIR$/grpc-configurer/pom.xml" />
         <option value="$PROJECT_DIR$/../base-service/pom.xml" />
+        <option value="$PROJECT_DIR$/comments-service/image-serviceRPC/pom.xml" />
+        <option value="$PROJECT_DIR$/image-serviceRPC/pom.xml" />
+        <option value="$PROJECT_DIR$/../image-serviceRPC/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/grpc-interface/pom.xml" />
         <option value="$PROJECT_DIR$/image-service/pom.xml" />
+        <option value="$PROJECT_DIR$/image-serviceRPC/pom.xml" />
         <option value="$PROJECT_DIR$/test-client/pom.xml" />
       </set>
     </option>

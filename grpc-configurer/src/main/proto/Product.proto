@@ -14,6 +14,7 @@ message SaveProductRequest {
     int32 price = 4;
     string city = 5;
     string category = 6;
+    int64 userId = 7;
   }
   message Image {
     string name = 2;
@@ -33,6 +34,27 @@ message GetProductByIdRequest{
   int64 id = 1;
 }
 
+message GetProductByUserIdRequest{
+  int64 userId = 1;
+}
+
+message GetLikesProductRequest{
+  int64 userId = 1;
+}
+
+message SaveLikeProductRequest{
+  int64 userId = 1;
+  int64 prodId = 2;
+}
+message SaveLikeProductResponse{
+  bool isApp = 1;
+}
+
+message RemoveLikeProductRequest{
+  int64 userId = 1;
+  int64 prodId = 2;
+}
+
 message GetProductResponse{
   Product product = 1;
   repeated Image images = 2;
@@ -44,6 +66,8 @@ message GetProductResponse{
     string city = 5;
     string category = 6;
     int64 previewImageId = 7;
+    google.protobuf.Timestamp dateOfCreated = 8;
+    int64 userId=9;
   }
   message Image {
     int64 id=1;
@@ -54,6 +78,13 @@ message GetProductResponse{
     bool isPreviewImage = 6;
     bytes bytes = 7;
   }
+}
+message GetImageByIdRequest{
+  int64 id=1;
+}
+
+message GetImagesByProductIdRequest{
+  int64 productId=1;
 }
 
 message FindAllByAttributeRequest{
@@ -81,4 +112,10 @@ service ProductService {
   rpc FindAllByAttribute (FindAllByAttributeRequest) returns (stream GetProductResponse);
   rpc FindByCity(FindAllByAttributeRequest) returns (stream GetProductResponse);
   rpc GetPagesSize(GetPagesSizeRequest) returns (PagesSizeResponse);
+  rpc GetImageById(GetImageByIdRequest) returns (GetProductResponse.Image);
+  rpc GetAllImagesByProd (GetImagesByProductIdRequest) returns (stream GetProductResponse.Image);
+  rpc GetMyProduct(GetProductByUserIdRequest) returns (stream GetProductResponse);
+  rpc SaveLikeProduct(SaveLikeProductRequest) returns (SaveLikeProductResponse);
+  rpc RemoveLikeProduct(RemoveLikeProductRequest) returns (SaveLikeProductResponse);
+  rpc GetLikesProduct(GetLikesProductRequest) returns (stream GetProductResponse);
 }

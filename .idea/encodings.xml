@@ -5,9 +5,11 @@
     <file url="file://$PROJECT_DIR$/../base-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../base-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../grrr/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../image-serviceRPC/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/base-service/grpc-configurer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/base-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/base-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/comments-service/image-serviceRPC/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/comments-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/grpc-configurer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/product-service/src/main/java" charset="UTF-8" />

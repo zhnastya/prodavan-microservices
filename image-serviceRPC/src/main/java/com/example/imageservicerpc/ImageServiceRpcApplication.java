@@ -1,13 +1,13 @@
-package com.example.images;
+package com.example.imageservicerpc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ImageServiceApplication {
+public class ImageServiceRpcApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ImageServiceApplication.class, args);
+        SpringApplication.run(ImageServiceRpcApplication.class, args);
     }
 
 }

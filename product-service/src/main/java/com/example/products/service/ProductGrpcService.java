@@ -3,6 +3,7 @@ package com.example.products.service;
 import com.example.products.model.Image;
 import com.example.products.model.Product;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Timestamp;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -10,7 +11,9 @@ import net.devh.boot.grpc.server.service.GrpcService;
 import products.ProductOuterClass.*;
 import products.ProductServiceGrpc;
 
+import java.time.ZoneOffset;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @GrpcService
@@ -31,11 +34,36 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
     private GetProductResponse.Image toIterableEntity(Image image) {
         return GetProductResponse.Image
                 .newBuilder()
+                .setId(image.getId())
                 .setName(image.getName())
                 .setOriginalFileName(image.getOriginalFileName())
                 .setContentType(image.getContentType())
                 .setSize(image.getSize())
                 .setBytes(ByteString.copyFrom(image.getBytes()))
+                .build();
+    }
+
+    private GetProductResponse makeResponse(Product product){
+        List<GetProductResponse.Image> files = new ArrayList<>();
+        product.getImages().forEach(image -> files.add(toIterableEntity(image)));
+        return GetProductResponse
+                .newBuilder()
+                .setProduct(GetProductResponse.Product
+                        .newBuilder()
+                        .setId(product.getId())
+                        .setTitle(product.getTitle())
+                        .setDescription(product.getDescription())
+                        .setPrice(product.getPrice())
+                        .setCity(product.getCity())
+                        .setCategory(product.getCategory())
+                        .setPreviewImageId(product.getPreviewImageId())
+                        .setUserId(product.getUserId())
+                        .setDateOfCreated(Timestamp.newBuilder()
+                                .setSeconds(product.getDateOfCreated().toEpochSecond(ZoneOffset.UTC))
+                                .setNanos(product.getDateOfCreated().getNano())
+                                .build())
+                        .build())
+                .addAllImages(files)
                 .build();
     }
 
@@ -49,17 +77,20 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
                 .price(request.getProduct().getPrice())
                 .city(request.getProduct().getCity())
                 .category(request.getProduct().getCategory())
+                .userId(request.getProduct().getUserId())
+                .images(new ArrayList<>())
                 .build();
 
         List<SaveProductRequest.Image> files = request.getImagesList();
         List<Image> images = new ArrayList<>();
-        for (SaveProductRequest.Image file : files) {
-            images.add(toImageEntity(file));
+        if (!files.isEmpty()) {
+            for (SaveProductRequest.Image file : files) {
+                images.add(toImageEntity(file));
+            }
         }
         SaveProductResponse response1 = SaveProductResponse.newBuilder()
                 .setId(service.saveProduct(product, images))
                 .build();
-
         response.onNext(response1);
         response.onCompleted();
     }
@@ -73,6 +104,60 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
         response.onCompleted();
     }
 
+    @Override
+    public void getAllImagesByProd(GetImagesByProductIdRequest request,
+                                   StreamObserver<GetProductResponse.Image> responseObserver) {
+        Iterator<Image> images = service.getAllImagesByProd(request.getProductId()).iterator();
+        while (images.hasNext()){
+            GetProductResponse.Image response = toIterableEntity(images.next());
+            responseObserver.onNext(response);
+        }
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getMyProduct(GetProductByUserIdRequest request,
+                             StreamObserver<GetProductResponse> responseObserver) {
+        Iterator<Product> products = service.getMyProduct(request.getUserId()).iterator();
+        while (products.hasNext()){
+            GetProductResponse response = makeResponse(products.next());
+            responseObserver.onNext(response);
+        }
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void saveLikeProduct(SaveLikeProductRequest request,
+                                StreamObserver<SaveLikeProductResponse> responseObserver) {
+        boolean isSave = service.likeProduct(request.getUserId(), request.getProdId());
+        SaveLikeProductResponse response = SaveLikeProductResponse.newBuilder()
+                .setIsApp(isSave)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void removeLikeProduct(RemoveLikeProductRequest request,
+                                  StreamObserver<SaveLikeProductResponse> responseObserver) {
+        boolean isSave = service.dislikeProduct(request.getUserId(), request.getProdId());
+        SaveLikeProductResponse response = SaveLikeProductResponse.newBuilder()
+                .setIsApp(isSave)
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
+    }
+
+    @Override
+    public void getLikesProduct(GetLikesProductRequest request,
+                                StreamObserver<GetProductResponse> responseObserver) {
+        Iterator<Product> products = service.getLikesProduct(request.getUserId()).iterator();
+        while (products.hasNext()){
+            GetProductResponse response = makeResponse(products.next());
+            responseObserver.onNext(response);
+        }
+        responseObserver.onCompleted();
+    }
 
     @Override
     public void findAllByAttribute(FindAllByAttributeRequest request,
@@ -105,23 +190,13 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
         response.onCompleted();
     }
 
-    private GetProductResponse makeResponse(Product product){
-        List<GetProductResponse.Image> files = new ArrayList<>();
-        product.getImages().forEach(image -> files.add(toIterableEntity(image)));
-        return GetProductResponse
-                .newBuilder()
-                .setProduct(GetProductResponse.Product
-                        .newBuilder()
-                        .setId(product.getId())
-                        .setTitle(product.getTitle())
-                        .setDescription(product.getDescription())
-                        .setPrice(product.getPrice())
-                        .setCity(product.getCity())
-                        .setCategory(product.getCategory())
-                        .setPreviewImageId(product.getPreviewImageId())
-                        .build())
-                .addAllImages(files)
-                .build();
+    @Override
+    public void getImageById(GetImageByIdRequest request,
+                             StreamObserver<GetProductResponse.Image> response){
+        Image image = service.getImageById(request.getId());
+        GetProductResponse.Image response1 = toIterableEntity(image);
+        response.onNext(response1);
+        response.onCompleted();
     }
 }
 

@@ -1,19 +1,18 @@
 package com.example.products.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -37,37 +36,40 @@ public class Product {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "dateOfCreated")
+    @Column(name = "date_of_created")
     private LocalDateTime dateOfCreated;
 
     @Column(name = "category")
     private String category;
 
-    @Column(name = "previewImageId")
+    @Column(name = "preview_image_id")
     private Long previewImageId;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,
             mappedBy = "product")
     private List<Image> images = new ArrayList<>();
-
-//    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-//    @JoinColumn
-//    private User user;
-//
-//    @ManyToMany(mappedBy = "likesProd")
-//    private List<User> likeUsers = new ArrayList<>();
+    private Long userId;
+    @ElementCollection(targetClass = Long.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "like_prod",
+            joinColumns = @JoinColumn(name = "product_id"))
+    private Set<Long> preferUsers;
 
     @PrePersist
     private void init() {
         dateOfCreated = LocalDateTime.now();
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public void addImageToProduct(Image image) {
-        this.images.add(image);
         image.setProduct(this);
+        images.add(image);
+    }
+
+    public boolean addLikeToProduct(Long userId) {
+        return preferUsers.add(userId);
+    }
+
+    public boolean removeLikeToProduct(Long userId) {
+        return preferUsers.remove(userId);
     }
 }

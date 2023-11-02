@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
+
     List<Product> findAllByTitle(String title);
 
     List<Product> findAllByCategory(String category);
@@ -31,4 +32,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Page<Product> findByCategoryContaining(String category, Pageable paging);
 
     Page<Product> findByCategoryAndTitleContaining(String category, String title, Pageable pageable);
+
+    List<Product> findAllByPreferUsersContains(Long userId);
+    List<Product> findAllByUserId(Long userId);
 }
