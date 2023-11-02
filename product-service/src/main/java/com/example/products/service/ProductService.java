@@ -1,4 +1,5 @@
 package com.example.products.service;
+
 import com.example.products.model.Image;
 import com.example.products.model.Product;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,9 +25,13 @@ public interface ProductService {
 
     int getPagesSize(Integer limit, String category, String title);
 
-//    void likeProduct(Principal principal, Long prodId);
-//
-//    void dislikeProduct(Principal principal, Long prodId);
-//
-//    Set<Product> getLikesProduct(Principal principal);
+    boolean likeProduct(Long userId, Long prodId);
+
+    boolean dislikeProduct(Long userId, Long prodId);
+
+    List<Image> getAllImagesByProd(Long prodId);
+    List<Product> getMyProduct(Long userId);
+    List<Product> getLikesProduct(Long userId);
+    Image getImageById(Long id);
+
 }

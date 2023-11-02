@@ -38,7 +38,8 @@ public class UserServiceImpl implements UserService{
         user.setRoles(Set.of(Role.ROLE_USER));
         user.setPassword(user.getPassword());
 //        user.setAvatar(null);
-        return userRepository.save(user).getId();
+        User user1 =  userRepository.save(user);
+        return user1.getId();
     }
 
 

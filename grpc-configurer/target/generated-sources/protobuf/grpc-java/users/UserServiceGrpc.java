@@ -187,6 +187,102 @@ public final class UserServiceGrpc {
      return getUpdateUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<users.UserOuterClass.SaveImageUserRequest,
+      users.UserOuterClass.SaveImageResponse> getSaveAvatarMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SaveAvatar",
+      requestType = users.UserOuterClass.SaveImageUserRequest.class,
+      responseType = users.UserOuterClass.SaveImageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<users.UserOuterClass.SaveImageUserRequest,
+      users.UserOuterClass.SaveImageResponse> getSaveAvatarMethod() {
+    io.grpc.MethodDescriptor<users.UserOuterClass.SaveImageUserRequest, users.UserOuterClass.SaveImageResponse> getSaveAvatarMethod;
+    if ((getSaveAvatarMethod = UserServiceGrpc.getSaveAvatarMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getSaveAvatarMethod = UserServiceGrpc.getSaveAvatarMethod) == null) {
+          UserServiceGrpc.getSaveAvatarMethod = getSaveAvatarMethod = 
+              io.grpc.MethodDescriptor.<users.UserOuterClass.SaveImageUserRequest, users.UserOuterClass.SaveImageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "grpc.server.grpc_server.user.UserService", "SaveAvatar"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  users.UserOuterClass.SaveImageUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  users.UserOuterClass.SaveImageResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("SaveAvatar"))
+                  .build();
+          }
+        }
+     }
+     return getSaveAvatarMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<users.UserOuterClass.UpdateImageUserRequest,
+      users.UserOuterClass.SaveImageResponse> getUpdateAvatarMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAvatar",
+      requestType = users.UserOuterClass.UpdateImageUserRequest.class,
+      responseType = users.UserOuterClass.SaveImageResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<users.UserOuterClass.UpdateImageUserRequest,
+      users.UserOuterClass.SaveImageResponse> getUpdateAvatarMethod() {
+    io.grpc.MethodDescriptor<users.UserOuterClass.UpdateImageUserRequest, users.UserOuterClass.SaveImageResponse> getUpdateAvatarMethod;
+    if ((getUpdateAvatarMethod = UserServiceGrpc.getUpdateAvatarMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getUpdateAvatarMethod = UserServiceGrpc.getUpdateAvatarMethod) == null) {
+          UserServiceGrpc.getUpdateAvatarMethod = getUpdateAvatarMethod = 
+              io.grpc.MethodDescriptor.<users.UserOuterClass.UpdateImageUserRequest, users.UserOuterClass.SaveImageResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "grpc.server.grpc_server.user.UserService", "UpdateAvatar"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  users.UserOuterClass.UpdateImageUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  users.UserOuterClass.SaveImageResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("UpdateAvatar"))
+                  .build();
+          }
+        }
+     }
+     return getUpdateAvatarMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<users.UserOuterClass.GetAvatarRequest,
+      users.UserOuterClass.GetAvatarResponse> getGetAvatarMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAvatar",
+      requestType = users.UserOuterClass.GetAvatarRequest.class,
+      responseType = users.UserOuterClass.GetAvatarResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<users.UserOuterClass.GetAvatarRequest,
+      users.UserOuterClass.GetAvatarResponse> getGetAvatarMethod() {
+    io.grpc.MethodDescriptor<users.UserOuterClass.GetAvatarRequest, users.UserOuterClass.GetAvatarResponse> getGetAvatarMethod;
+    if ((getGetAvatarMethod = UserServiceGrpc.getGetAvatarMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getGetAvatarMethod = UserServiceGrpc.getGetAvatarMethod) == null) {
+          UserServiceGrpc.getGetAvatarMethod = getGetAvatarMethod = 
+              io.grpc.MethodDescriptor.<users.UserOuterClass.GetAvatarRequest, users.UserOuterClass.GetAvatarResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "grpc.server.grpc_server.user.UserService", "GetAvatar"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  users.UserOuterClass.GetAvatarRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  users.UserOuterClass.GetAvatarResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("GetAvatar"))
+                  .build();
+          }
+        }
+     }
+     return getGetAvatarMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -249,6 +345,27 @@ public final class UserServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateUserMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void saveAvatar(users.UserOuterClass.SaveImageUserRequest request,
+        io.grpc.stub.StreamObserver<users.UserOuterClass.SaveImageResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSaveAvatarMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void updateAvatar(users.UserOuterClass.UpdateImageUserRequest request,
+        io.grpc.stub.StreamObserver<users.UserOuterClass.SaveImageResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateAvatarMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getAvatar(users.UserOuterClass.GetAvatarRequest request,
+        io.grpc.stub.StreamObserver<users.UserOuterClass.GetAvatarResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAvatarMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -286,6 +403,27 @@ public final class UserServiceGrpc {
                 users.UserOuterClass.UpdateUserRequest,
                 users.UserOuterClass.FindUserByAttribute>(
                   this, METHODID_UPDATE_USER)))
+          .addMethod(
+            getSaveAvatarMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                users.UserOuterClass.SaveImageUserRequest,
+                users.UserOuterClass.SaveImageResponse>(
+                  this, METHODID_SAVE_AVATAR)))
+          .addMethod(
+            getUpdateAvatarMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                users.UserOuterClass.UpdateImageUserRequest,
+                users.UserOuterClass.SaveImageResponse>(
+                  this, METHODID_UPDATE_AVATAR)))
+          .addMethod(
+            getGetAvatarMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                users.UserOuterClass.GetAvatarRequest,
+                users.UserOuterClass.GetAvatarResponse>(
+                  this, METHODID_GET_AVATAR)))
           .build();
     }
   }
@@ -347,6 +485,30 @@ public final class UserServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void saveAvatar(users.UserOuterClass.SaveImageUserRequest request,
+        io.grpc.stub.StreamObserver<users.UserOuterClass.SaveImageResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSaveAvatarMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void updateAvatar(users.UserOuterClass.UpdateImageUserRequest request,
+        io.grpc.stub.StreamObserver<users.UserOuterClass.SaveImageResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateAvatarMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getAvatar(users.UserOuterClass.GetAvatarRequest request,
+        io.grpc.stub.StreamObserver<users.UserOuterClass.GetAvatarResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAvatarMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -402,6 +564,27 @@ public final class UserServiceGrpc {
       return blockingUnaryCall(
           getChannel(), getUpdateUserMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public users.UserOuterClass.SaveImageResponse saveAvatar(users.UserOuterClass.SaveImageUserRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSaveAvatarMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public users.UserOuterClass.SaveImageResponse updateAvatar(users.UserOuterClass.UpdateImageUserRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateAvatarMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public users.UserOuterClass.GetAvatarResponse getAvatar(users.UserOuterClass.GetAvatarRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAvatarMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -453,6 +636,30 @@ public final class UserServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getUpdateUserMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<users.UserOuterClass.SaveImageResponse> saveAvatar(
+        users.UserOuterClass.SaveImageUserRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSaveAvatarMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<users.UserOuterClass.SaveImageResponse> updateAvatar(
+        users.UserOuterClass.UpdateImageUserRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateAvatarMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<users.UserOuterClass.GetAvatarResponse> getAvatar(
+        users.UserOuterClass.GetAvatarRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetAvatarMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_USER = 0;
@@ -460,6 +667,9 @@ public final class UserServiceGrpc {
   private static final int METHODID_FIND_BY_EMAIL = 2;
   private static final int METHODID_FIND_ALL_USERS = 3;
   private static final int METHODID_UPDATE_USER = 4;
+  private static final int METHODID_SAVE_AVATAR = 5;
+  private static final int METHODID_UPDATE_AVATAR = 6;
+  private static final int METHODID_GET_AVATAR = 7;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -497,6 +707,18 @@ public final class UserServiceGrpc {
         case METHODID_UPDATE_USER:
           serviceImpl.updateUser((users.UserOuterClass.UpdateUserRequest) request,
               (io.grpc.stub.StreamObserver<users.UserOuterClass.FindUserByAttribute>) responseObserver);
+          break;
+        case METHODID_SAVE_AVATAR:
+          serviceImpl.saveAvatar((users.UserOuterClass.SaveImageUserRequest) request,
+              (io.grpc.stub.StreamObserver<users.UserOuterClass.SaveImageResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_AVATAR:
+          serviceImpl.updateAvatar((users.UserOuterClass.UpdateImageUserRequest) request,
+              (io.grpc.stub.StreamObserver<users.UserOuterClass.SaveImageResponse>) responseObserver);
+          break;
+        case METHODID_GET_AVATAR:
+          serviceImpl.getAvatar((users.UserOuterClass.GetAvatarRequest) request,
+              (io.grpc.stub.StreamObserver<users.UserOuterClass.GetAvatarResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -564,6 +786,9 @@ public final class UserServiceGrpc {
               .addMethod(getFindByEmailMethod())
               .addMethod(getFindAllUsersMethod())
               .addMethod(getUpdateUserMethod())
+              .addMethod(getSaveAvatarMethod())
+              .addMethod(getUpdateAvatarMethod())
+              .addMethod(getGetAvatarMethod())
               .build();
         }
       }

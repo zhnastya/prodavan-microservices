@@ -1,6 +1,8 @@
 package com.example.products.service;
+
 import com.example.products.model.Image;
 import com.example.products.model.Product;
+import com.example.products.repository.ImageRepository;
 import com.example.products.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -24,6 +26,7 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
+    private final ImageRepository imageRepository;
 
 
     private List<Product> getByCity(String city, Integer offset, Integer limit,
@@ -87,10 +90,9 @@ public class ProductServiceImpl implements ProductService {
 //        return service.getUserByEmail(principal.getName());
 //    }
 
-
     private Page<Product> getByCategoryAndTitle(Integer offset, Integer limit,
-                                                String sorting, Sort.Direction sort,
-                                                String category, String title) {
+                                               String sorting, Sort.Direction sort,
+                                               String category, String title) {
         if (category.isEmpty() && !title.isEmpty()) {
             return productRepository.findByTitleContaining(title,
                     PageRequest.of(offset, limit, Sort.by(sort, sorting)));
@@ -103,6 +105,12 @@ public class ProductServiceImpl implements ProductService {
         } else {
             return productRepository.findAll(PageRequest.of(offset, limit, Sort.by(sort, sorting)));
         }
+    }
+
+    private void loadImagesToProduct(Product product){
+        if (product==null) return;
+        List<Image> images = imageRepository.findAllByProduct(product);
+        images.forEach(product::addImageToProduct);
     }
 
 
@@ -133,6 +141,10 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+    @Override
+    public Image getImageById(Long imageId) {
+        return imageRepository.getReferenceById(imageId);
+    }
 
     @Override
     public void deleteProduct(Long id) {
@@ -142,7 +154,9 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getProductById(Long id) {
-        return productRepository.findById(id).orElse(null);
+        Product product = productRepository.findById(id).orElse(null);
+        loadImagesToProduct(product);
+        return product;
     }
 
 
@@ -165,7 +179,9 @@ public class ProductServiceImpl implements ProductService {
             sorting = "dateOfCreated";
             sort = Sort.Direction.ASC;
         }
-        return getByCategoryAndTitle(offset, limit, sorting, sort, category, title).getContent();
+        List<Product> products = getByCategoryAndTitle(offset, limit, sorting, sort, category, title).getContent();
+        products.forEach(this::loadImagesToProduct);
+        return products;
     }
 
 
@@ -188,7 +204,9 @@ public class ProductServiceImpl implements ProductService {
             sorting = "dateOfCreated";
             sort = Sort.Direction.ASC;
         }
-        return getByCity(city, offset, limit, sorting, sort, category, title);
+        List<Product> products = getByCity(city, offset, limit, sorting, sort, category, title);
+        products.forEach(this::loadImagesToProduct);
+        return products;
     }
 
 
@@ -209,30 +227,34 @@ public class ProductServiceImpl implements ProductService {
                 : allProducts.size() / limit;
     }
 
+    @Override
+    public boolean likeProduct(Long userId, Long prodId) {
+        Product product = productRepository.getReferenceById(prodId);
+        return product.addLikeToProduct(userId);
+    }
 
-//    @Override
-//    public void likeProduct(Principal principal, Long prodId) {
-//        User user = getUserByPrincipal(principal);
-//        Product product = getProductById(prodId);
-//        Set<Product> products = new HashSet<>(user.getLikesProd() == null ? Collections.emptyList() : user.getLikesProd());
-//        products.add(product);
-//        user.setLikesProd(products);
-//    }
-//
-//
-//    @Override
-//    public void dislikeProduct(Principal principal, Long prodId) {
-//        User user = getUserByPrincipal(principal);
-//        Product product = getProductById(prodId);
-//        Set<Product> products = new HashSet<>(user.getLikesProd() == null ? Collections.emptyList() : user.getLikesProd());
-//        products.remove(product);
-//        user.setLikesProd(products);
-//    }
-//
-//
-//    @Override
-//    public Set<Product> getLikesProduct(Principal principal) {
-//        User user = getUserByPrincipal(principal);
-//        return user.getLikesProd();
-//    }
+    @Override
+    public boolean dislikeProduct(Long userId, Long prodId) {
+        Product product = productRepository.getReferenceById(prodId);
+        return product.removeLikeToProduct(userId);
+    }
+
+    @Override
+    public List<Image> getAllImagesByProd(Long prodId) {
+        return getAllImagesByProd(prodId);
+    }
+
+    @Override
+    public List<Product> getMyProduct(Long userId) {
+        List<Product> products = productRepository.findAllByUserId(userId);
+        products.forEach(this::loadImagesToProduct);
+        return products;
+    }
+
+    @Override
+    public List<Product> getLikesProduct(Long userId) {
+        List<Product> products = productRepository.findAllByPreferUsersContains(userId);
+        products.forEach(this::loadImagesToProduct);
+        return products;
+    }
 }
