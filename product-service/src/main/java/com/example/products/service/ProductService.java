@@ -28,10 +28,7 @@ public interface ProductService {
     boolean likeProduct(Long userId, Long prodId);
 
     boolean dislikeProduct(Long userId, Long prodId);
-
-    List<Image> getAllImagesByProd(Long prodId);
     List<Product> getMyProduct(Long userId);
     List<Product> getLikesProduct(Long userId);
-    Image getImageById(Long id);
 
 }

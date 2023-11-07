@@ -2,31 +2,26 @@ package com.example.products.service;
 
 import com.example.products.model.Image;
 import com.example.products.model.Product;
-import com.example.products.repository.ImageRepository;
 import com.example.products.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @Service
+@Transactional
 @Slf4j
-@Qualifier("ProductServiceImpl")
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
-    private final ImageRepository imageRepository;
+    private final ImageService service;
 
 
     private List<Product> getByCity(String city, Integer offset, Integer limit,
@@ -34,54 +29,44 @@ public class ProductServiceImpl implements ProductService {
                                     String category, String title) {
         if (category.isEmpty() && !title.isEmpty()) {
             return productRepository.findByCityContainingAndTitleContaining(title, title,
-                    PageRequest.of(offset, limit, Sort.by(sort, sorting))).getContent();
+                    PageRequest.of(offset, limit, Sort.by(sort, sorting)));
         } else if (!category.isEmpty() && title.isEmpty()) {
             return productRepository.findByCategoryContaining(category,
-                    PageRequest.of(offset, limit, Sort.by(sort, sorting))).getContent();
+                    PageRequest.of(offset, limit, Sort.by(sort, sorting)));
         } else if (!title.isEmpty()) {
             return productRepository.findByCityContainingAndTitleContainingAndCategoryContaining(city, title, category,
-                    PageRequest.of(offset, limit, Sort.by(sort, sorting))).getContent();
+                    PageRequest.of(offset, limit, Sort.by(sort, sorting)));
         } else {
-            return productRepository.findAllByCityContaining(city, PageRequest.of(offset, limit, Sort.by(sort, sorting))).getContent();
+            return productRepository.findAllByCityContaining(city, PageRequest.of(offset, limit, Sort.by(sort, sorting)));
         }
     }
 
 
     @SneakyThrows
     private Product addManyProd(Principal principal, List<MultipartFile> files) {
-        Product product1 = new Product();
-        List<String> category = List.of("Одежда", "Техника", "Товары для дома", "Товары для детей",
-                "Товары для животных", "Авто", "Красота и здоровье", "Недвижимость", "Хобби и отдых");
-        List<String> cities = List.of("Москва", "Санкт - Петербург", "Самара", "Воронеж", "Казань");
-        List<Image> images = new ArrayList<>();
-
-        for (MultipartFile file : files) {
-            Image image = toImageEntity(file);
-            images.add(image);
-            product1.addImageToProduct(image);
-        }
-        images.get(0).setPreviewImage(true);
-        Random random = new Random();
-        String randomName = category.get(random.nextInt(category.size()));
-
-        product1.setTitle(randomName + " " + cities.get(random.nextInt(cities.size())));
-        product1.setDescription("Товар предназначенный для - " + randomName);
-        product1.setPrice(random.nextInt(30000));
-        product1.setCity(cities.get(random.nextInt(cities.size())));
-        product1.setCategory(randomName);
-//        product1.setUser(getUserByPrincipal(principal));
-        return product1;
-    }
-
-
-    private Image toImageEntity(MultipartFile file) throws IOException {
-        Image imageForProduct = new Image();
-        imageForProduct.setName(file.getName());
-        imageForProduct.setOriginalFileName(file.getOriginalFilename());
-        imageForProduct.setContentType(file.getContentType());
-        imageForProduct.setSize(file.getSize());
-        imageForProduct.setBytes(file.getBytes());
-        return imageForProduct;
+//        Product product1 = new Product();
+//        List<String> category = List.of("Одежда", "Техника", "Товары для дома", "Товары для детей",
+//                "Товары для животных", "Авто", "Красота и здоровье", "Недвижимость", "Хобби и отдых");
+//        List<String> cities = List.of("Москва", "Санкт - Петербург", "Самара", "Воронеж", "Казань");
+//        List<Image> images = new ArrayList<>();
+//
+//        for (MultipartFile file : files) {
+//            Image image = toImageEntity(file);
+//            images.add(image);
+//            product1.addImageToProduct(image);
+//        }
+//        images.get(0).setPreviewImage(true);
+//        Random random = new Random();
+//        String randomName = category.get(random.nextInt(category.size()));
+//
+//        product1.setTitle(randomName + " " + cities.get(random.nextInt(cities.size())));
+//        product1.setDescription("Товар предназначенный для - " + randomName);
+//        product1.setPrice(random.nextInt(30000));
+//        product1.setCity(cities.get(random.nextInt(cities.size())));
+//        product1.setCategory(randomName);
+////        product1.setUser(getUserByPrincipal(principal));
+//        return product1;
+        return null;
     }
 
 
@@ -90,7 +75,7 @@ public class ProductServiceImpl implements ProductService {
 //        return service.getUserByEmail(principal.getName());
 //    }
 
-    private Page<Product> getByCategoryAndTitle(Integer offset, Integer limit,
+    private List<Product> getByCategoryAndTitle(Integer offset, Integer limit,
                                                String sorting, Sort.Direction sort,
                                                String category, String title) {
         if (category.isEmpty() && !title.isEmpty()) {
@@ -103,15 +88,15 @@ public class ProductServiceImpl implements ProductService {
             return productRepository.findByCategoryAndTitleContaining(category, title,
                     PageRequest.of(offset, limit, Sort.by(sort, sorting)));
         } else {
-            return productRepository.findAll(PageRequest.of(offset, limit, Sort.by(sort, sorting)));
+            return productRepository.findAll(PageRequest.of(offset, limit, Sort.by(sort, sorting))).getContent();
         }
     }
 
-    private void loadImagesToProduct(Product product){
-        if (product==null) return;
-        List<Image> images = imageRepository.findAllByProduct(product);
-        images.forEach(product::addImageToProduct);
-    }
+//    private void loadImagesToProduct(Product product){
+//        if (product==null) return;
+//        List<Image> images = imageRepository.findAllByProduct(product);
+//        images.forEach(product::addImageToProduct);
+//    }
 
 
     @SneakyThrows
@@ -122,11 +107,10 @@ public class ProductServiceImpl implements ProductService {
             for (Image image : images) {
                 product.addImageToProduct(image);
             }
-            images.get(0).setPreviewImage(true);
             Product productFromDb = productRepository.save(product);
             productFromDb.setPreviewImageId(productFromDb.getImages().get(0).getId());
+            productFromDb.getImages().get(0).setPreviewImage(true);
         }
-        log.info("Saving new Product. Title: {}; Author: {}", product.getTitle());
         return productRepository.save(product).getId();
     }
 
@@ -142,11 +126,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Image getImageById(Long imageId) {
-        return imageRepository.getReferenceById(imageId);
-    }
-
-    @Override
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
@@ -155,9 +134,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Long id) {
         Product product = productRepository.findById(id).orElse(null);
-        loadImagesToProduct(product);
+//        loadImagesToProduct(product);
         return product;
     }
+
 
 
     @Override
@@ -179,8 +159,8 @@ public class ProductServiceImpl implements ProductService {
             sorting = "dateOfCreated";
             sort = Sort.Direction.ASC;
         }
-        List<Product> products = getByCategoryAndTitle(offset, limit, sorting, sort, category, title).getContent();
-        products.forEach(this::loadImagesToProduct);
+        List<Product> products = getByCategoryAndTitle(offset, limit, sorting, sort, category, title);
+        products.stream().peek(product -> product.setImages(service.getImagesByProdId(product.getId())));
         return products;
     }
 
@@ -205,7 +185,7 @@ public class ProductServiceImpl implements ProductService {
             sort = Sort.Direction.ASC;
         }
         List<Product> products = getByCity(city, offset, limit, sorting, sort, category, title);
-        products.forEach(this::loadImagesToProduct);
+//        products.forEach(this::loadImagesToProduct);
         return products;
     }
 
@@ -240,21 +220,16 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Image> getAllImagesByProd(Long prodId) {
-        return getAllImagesByProd(prodId);
-    }
-
-    @Override
     public List<Product> getMyProduct(Long userId) {
         List<Product> products = productRepository.findAllByUserId(userId);
-        products.forEach(this::loadImagesToProduct);
+//        products.forEach(this::loadImagesToProduct);
         return products;
     }
 
     @Override
     public List<Product> getLikesProduct(Long userId) {
         List<Product> products = productRepository.findAllByPreferUsersContains(userId);
-        products.forEach(this::loadImagesToProduct);
+//        products.forEach(this::loadImagesToProduct);
         return products;
     }
 }

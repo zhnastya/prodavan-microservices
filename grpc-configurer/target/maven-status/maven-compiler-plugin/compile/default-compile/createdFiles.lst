@@ -4,7 +4,6 @@ comments\CommentOuterClass$CreateCommentResponse$Builder.class
 users\UserOuterClass$ErrorResponse.class
 users\UserOuterClass$FindByUserEmailRequest.class
 users\UserOuterClass$FindUserByAttribute.class
-users\UserOuterClass$UpdateImageUserRequest$Image$1.class
 users\UserOuterClass$GetAvatarResponse$Builder.class
 products\ProductOuterClass$GetPagesSizeRequest.class
 users\UserOuterClass$ErrorResponse$Builder.class
@@ -30,7 +29,6 @@ products\ProductOuterClass$SaveProductRequest$ProductOrBuilder.class
 products\ProductOuterClass$RemoveLikeProductRequest$Builder.class
 products\ProductServiceGrpc$ProductServiceImplBase.class
 comments\CommentOuterClass$CreateCommentRequest$Builder.class
-users\UserOuterClass$UpdateImageUserRequest$Image$Builder.class
 users\UserOuterClass$UpdateUserRequest$1.class
 comments\CommentOuterClass$FindByUserIdCommentResponse$Comment.class
 comments\CommentServiceGrpc.class
@@ -38,7 +36,6 @@ products\ProductOuterClass$SaveLikeProductRequestOrBuilder.class
 users\UserOuterClass$GetAvatarResponse$1.class
 comments\CommentOuterClass$CreateCommentResponse$CommentOrBuilder.class
 users\UserServiceGrpc$MethodHandlers.class
-users\UserOuterClass$SaveImageUserRequest$ImageOrBuilder.class
 users\UserOuterClass$CreateUserRequest$Builder.class
 products\ProductOuterClass$SaveProductRequest$Product$1.class
 comments\CommentOuterClass$FindByUserIdCommentResponse$CommentOrBuilder.class
@@ -87,7 +84,6 @@ users\UserOuterClass$GetAvatarResponseOrBuilder.class
 products\ProductOuterClass$GetProductByUserIdRequest$1.class
 users\UserOuterClass$FindUserByAttribute$User$Builder.class
 users\UserServiceGrpc$UserServiceStub.class
-users\UserOuterClass$SaveImageUserRequest$Image.class
 products\ProductOuterClass$FindAllByAttributeRequest$1.class
 products\ProductOuterClass$SaveLikeProductRequest.class
 products\ProductOuterClass$SaveProductRequest.class
@@ -109,7 +105,6 @@ products\ProductOuterClass$RemoveLikeProductRequest.class
 products\ProductOuterClass$SaveProductRequest$Product$Builder.class
 products\ProductOuterClass$GetImageByIdRequest$Builder.class
 users\UserOuterClass$1.class
-users\UserOuterClass$SaveImageUserRequest$Image$Builder.class
 products\ProductOuterClass$GetProductByUserIdRequestOrBuilder.class
 products\ProductOuterClass.class
 products\ProductOuterClass$GetImageByIdRequestOrBuilder.class
@@ -164,7 +159,6 @@ users\UserOuterClass$FindByUserIdRequest.class
 products\ProductServiceGrpc$ProductServiceFileDescriptorSupplier.class
 comments\CommentOuterClass$ErrorResponse$Builder.class
 users\UserOuterClass$FindUserByAttribute$User$1.class
-users\UserOuterClass$UpdateImageUserRequest$ImageOrBuilder.class
 users\UserOuterClass$GetAvatarRequestOrBuilder.class
 users\UserOuterClass$UpdateUserRequest$Builder.class
 users\UserOuterClass$CreateUserRequest$User$1.class
@@ -174,7 +168,6 @@ users\UserOuterClass$FindByUserIdRequest$Builder.class
 products\ProductOuterClass$SaveProductRequest$Product.class
 users\UserOuterClass$SaveImageUserRequest.class
 comments\CommentOuterClass$CreateCommentResponse$Comment.class
-users\UserOuterClass$UpdateImageUserRequest$Image.class
 comments\CommentOuterClass$CreateCommentRequest$Comment.class
 products\ProductOuterClass$GetProductResponse$Product$1.class
 comments\CommentOuterClass$CreateCommentResponseOrBuilder.class
@@ -194,7 +187,6 @@ users\UserOuterClass$SaveImageUserRequest$1.class
 products\ProductServiceGrpc$MethodHandlers.class
 users\UserOuterClass$SaveImageUserRequestOrBuilder.class
 products\ProductOuterClass$SaveLikeProductRequest$1.class
-users\UserOuterClass$SaveImageUserRequest$Image$1.class
 products\ProductOuterClass$GetImagesByProductIdRequest$1.class
 products\ProductOuterClass$GetProductResponse$Image$1.class
 products\ProductOuterClass$1.class

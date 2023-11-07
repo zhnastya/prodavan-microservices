@@ -2,7 +2,6 @@ package com.example.products.service;
 
 import com.example.products.model.Image;
 import com.example.products.model.Product;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
@@ -20,14 +19,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBase {
     private final ProductService service;
+    private final ImageService serviceImg;
 
     private Image toImageEntity(SaveProductRequest.Image file){
         Image imageForProduct = new Image();
-        imageForProduct.setName(file.getName());
-        imageForProduct.setOriginalFileName(file.getOriginalFileName());
-        imageForProduct.setContentType(file.getContentType());
-        imageForProduct.setSize(file.getSize());
-        imageForProduct.setBytes(file.getBytes().toByteArray());
+        imageForProduct.setPath(file.getPath());
+        imageForProduct.setPreviewImage(file.getIsPreview());
         return imageForProduct;
     }
 
@@ -35,11 +32,8 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
         return GetProductResponse.Image
                 .newBuilder()
                 .setId(image.getId())
-                .setName(image.getName())
-                .setOriginalFileName(image.getOriginalFileName())
-                .setContentType(image.getContentType())
-                .setSize(image.getSize())
-                .setBytes(ByteString.copyFrom(image.getBytes()))
+                .setPath(image.getPath())
+                .setIsPreview(image.isPreviewImage())
                 .build();
     }
 
@@ -107,7 +101,7 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
     @Override
     public void getAllImagesByProd(GetImagesByProductIdRequest request,
                                    StreamObserver<GetProductResponse.Image> responseObserver) {
-        Iterator<Image> images = service.getAllImagesByProd(request.getProductId()).iterator();
+        Iterator<Image> images = serviceImg.getImagesByProdId(request.getProductId()).iterator();
         while (images.hasNext()){
             GetProductResponse.Image response = toIterableEntity(images.next());
             responseObserver.onNext(response);
@@ -193,7 +187,7 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
     @Override
     public void getImageById(GetImageByIdRequest request,
                              StreamObserver<GetProductResponse.Image> response){
-        Image image = service.getImageById(request.getId());
+        Image image = serviceImg.getImageById(request.getId());
         GetProductResponse.Image response1 = toIterableEntity(image);
         response.onNext(response1);
         response.onCompleted();
