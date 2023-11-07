@@ -1309,49 +1309,19 @@ public final class ProductOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>string name = 2;</code>
+       * <code>string path = 2;</code>
        */
-      java.lang.String getName();
+      java.lang.String getPath();
       /**
-       * <code>string name = 2;</code>
+       * <code>string path = 2;</code>
        */
       com.google.protobuf.ByteString
-          getNameBytes();
+          getPathBytes();
 
       /**
-       * <code>string originalFileName = 3;</code>
+       * <code>bool isPreview = 3;</code>
        */
-      java.lang.String getOriginalFileName();
-      /**
-       * <code>string originalFileName = 3;</code>
-       */
-      com.google.protobuf.ByteString
-          getOriginalFileNameBytes();
-
-      /**
-       * <code>int64 size = 4;</code>
-       */
-      long getSize();
-
-      /**
-       * <code>string contentType = 5;</code>
-       */
-      java.lang.String getContentType();
-      /**
-       * <code>string contentType = 5;</code>
-       */
-      com.google.protobuf.ByteString
-          getContentTypeBytes();
-
-      /**
-       * <code>bool isPreviewImage = 6;</code>
-       */
-      boolean getIsPreviewImage();
-
-      /**
-       * <code>bytes bytes = 7;</code>
-       */
-      com.google.protobuf.ByteString getBytes();
+      boolean getIsPreview();
     }
     /**
      * Protobuf type {@code grpc.server.grpc_server.product.SaveProductRequest.Image}
@@ -1366,12 +1336,8 @@ public final class ProductOuterClass {
         super(builder);
       }
       private Image() {
-        name_ = "";
-        originalFileName_ = "";
-        size_ = 0L;
-        contentType_ = "";
-        isPreviewImage_ = false;
-        bytes_ = com.google.protobuf.ByteString.EMPTY;
+        path_ = "";
+        isPreview_ = false;
       }
 
       @java.lang.Override
@@ -1401,34 +1367,12 @@ public final class ProductOuterClass {
               case 18: {
                 java.lang.String s = input.readStringRequireUtf8();
 
-                name_ = s;
+                path_ = s;
                 break;
               }
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
+              case 24: {
 
-                originalFileName_ = s;
-                break;
-              }
-              case 32: {
-
-                size_ = input.readInt64();
-                break;
-              }
-              case 42: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                contentType_ = s;
-                break;
-              }
-              case 48: {
-
-                isPreviewImage_ = input.readBool();
-                break;
-              }
-              case 58: {
-
-                bytes_ = input.readBytes();
+                isPreview_ = input.readBool();
                 break;
               }
               default: {
@@ -1463,133 +1407,47 @@ public final class ProductOuterClass {
                 products.ProductOuterClass.SaveProductRequest.Image.class, products.ProductOuterClass.SaveProductRequest.Image.Builder.class);
       }
 
-      public static final int NAME_FIELD_NUMBER = 2;
-      private volatile java.lang.Object name_;
+      public static final int PATH_FIELD_NUMBER = 2;
+      private volatile java.lang.Object path_;
       /**
-       * <code>string name = 2;</code>
+       * <code>string path = 2;</code>
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          path_ = s;
           return s;
         }
       }
       /**
-       * <code>string name = 2;</code>
+       * <code>string path = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getPathBytes() {
+        java.lang.Object ref = path_;
         if (ref instanceof java.lang.String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          path_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
 
-      public static final int ORIGINALFILENAME_FIELD_NUMBER = 3;
-      private volatile java.lang.Object originalFileName_;
+      public static final int ISPREVIEW_FIELD_NUMBER = 3;
+      private boolean isPreview_;
       /**
-       * <code>string originalFileName = 3;</code>
+       * <code>bool isPreview = 3;</code>
        */
-      public java.lang.String getOriginalFileName() {
-        java.lang.Object ref = originalFileName_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          originalFileName_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string originalFileName = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getOriginalFileNameBytes() {
-        java.lang.Object ref = originalFileName_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          originalFileName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int SIZE_FIELD_NUMBER = 4;
-      private long size_;
-      /**
-       * <code>int64 size = 4;</code>
-       */
-      public long getSize() {
-        return size_;
-      }
-
-      public static final int CONTENTTYPE_FIELD_NUMBER = 5;
-      private volatile java.lang.Object contentType_;
-      /**
-       * <code>string contentType = 5;</code>
-       */
-      public java.lang.String getContentType() {
-        java.lang.Object ref = contentType_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          contentType_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string contentType = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getContentTypeBytes() {
-        java.lang.Object ref = contentType_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          contentType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int ISPREVIEWIMAGE_FIELD_NUMBER = 6;
-      private boolean isPreviewImage_;
-      /**
-       * <code>bool isPreviewImage = 6;</code>
-       */
-      public boolean getIsPreviewImage() {
-        return isPreviewImage_;
-      }
-
-      public static final int BYTES_FIELD_NUMBER = 7;
-      private com.google.protobuf.ByteString bytes_;
-      /**
-       * <code>bytes bytes = 7;</code>
-       */
-      public com.google.protobuf.ByteString getBytes() {
-        return bytes_;
+      public boolean getIsPreview() {
+        return isPreview_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -1606,23 +1464,11 @@ public final class ProductOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (!getNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        if (!getPathBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
         }
-        if (!getOriginalFileNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, originalFileName_);
-        }
-        if (size_ != 0L) {
-          output.writeInt64(4, size_);
-        }
-        if (!getContentTypeBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, contentType_);
-        }
-        if (isPreviewImage_ != false) {
-          output.writeBool(6, isPreviewImage_);
-        }
-        if (!bytes_.isEmpty()) {
-          output.writeBytes(7, bytes_);
+        if (isPreview_ != false) {
+          output.writeBool(3, isPreview_);
         }
         unknownFields.writeTo(output);
       }
@@ -1633,26 +1479,12 @@ public final class ProductOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        if (!getNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        if (!getPathBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
         }
-        if (!getOriginalFileNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, originalFileName_);
-        }
-        if (size_ != 0L) {
+        if (isPreview_ != false) {
           size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(4, size_);
-        }
-        if (!getContentTypeBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, contentType_);
-        }
-        if (isPreviewImage_ != false) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(6, isPreviewImage_);
-        }
-        if (!bytes_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(7, bytes_);
+            .computeBoolSize(3, isPreview_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -1670,18 +1502,10 @@ public final class ProductOuterClass {
         products.ProductOuterClass.SaveProductRequest.Image other = (products.ProductOuterClass.SaveProductRequest.Image) obj;
 
         boolean result = true;
-        result = result && getName()
-            .equals(other.getName());
-        result = result && getOriginalFileName()
-            .equals(other.getOriginalFileName());
-        result = result && (getSize()
-            == other.getSize());
-        result = result && getContentType()
-            .equals(other.getContentType());
-        result = result && (getIsPreviewImage()
-            == other.getIsPreviewImage());
-        result = result && getBytes()
-            .equals(other.getBytes());
+        result = result && getPath()
+            .equals(other.getPath());
+        result = result && (getIsPreview()
+            == other.getIsPreview());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -1693,20 +1517,11 @@ public final class ProductOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
-        hash = (37 * hash) + ORIGINALFILENAME_FIELD_NUMBER;
-        hash = (53 * hash) + getOriginalFileName().hashCode();
-        hash = (37 * hash) + SIZE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getSize());
-        hash = (37 * hash) + CONTENTTYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getContentType().hashCode();
-        hash = (37 * hash) + ISPREVIEWIMAGE_FIELD_NUMBER;
+        hash = (37 * hash) + PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getPath().hashCode();
+        hash = (37 * hash) + ISPREVIEW_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getIsPreviewImage());
-        hash = (37 * hash) + BYTES_FIELD_NUMBER;
-        hash = (53 * hash) + getBytes().hashCode();
+            getIsPreview());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1840,17 +1655,9 @@ public final class ProductOuterClass {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          name_ = "";
+          path_ = "";
 
-          originalFileName_ = "";
-
-          size_ = 0L;
-
-          contentType_ = "";
-
-          isPreviewImage_ = false;
-
-          bytes_ = com.google.protobuf.ByteString.EMPTY;
+          isPreview_ = false;
 
           return this;
         }
@@ -1878,12 +1685,8 @@ public final class ProductOuterClass {
         @java.lang.Override
         public products.ProductOuterClass.SaveProductRequest.Image buildPartial() {
           products.ProductOuterClass.SaveProductRequest.Image result = new products.ProductOuterClass.SaveProductRequest.Image(this);
-          result.name_ = name_;
-          result.originalFileName_ = originalFileName_;
-          result.size_ = size_;
-          result.contentType_ = contentType_;
-          result.isPreviewImage_ = isPreviewImage_;
-          result.bytes_ = bytes_;
+          result.path_ = path_;
+          result.isPreview_ = isPreview_;
           onBuilt();
           return result;
         }
@@ -1932,26 +1735,12 @@ public final class ProductOuterClass {
 
         public Builder mergeFrom(products.ProductOuterClass.SaveProductRequest.Image other) {
           if (other == products.ProductOuterClass.SaveProductRequest.Image.getDefaultInstance()) return this;
-          if (!other.getName().isEmpty()) {
-            name_ = other.name_;
+          if (!other.getPath().isEmpty()) {
+            path_ = other.path_;
             onChanged();
           }
-          if (!other.getOriginalFileName().isEmpty()) {
-            originalFileName_ = other.originalFileName_;
-            onChanged();
-          }
-          if (other.getSize() != 0L) {
-            setSize(other.getSize());
-          }
-          if (!other.getContentType().isEmpty()) {
-            contentType_ = other.contentType_;
-            onChanged();
-          }
-          if (other.getIsPreviewImage() != false) {
-            setIsPreviewImage(other.getIsPreviewImage());
-          }
-          if (other.getBytes() != com.google.protobuf.ByteString.EMPTY) {
-            setBytes(other.getBytes());
+          if (other.getIsPreview() != false) {
+            setIsPreview(other.getIsPreview());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1982,290 +1771,97 @@ public final class ProductOuterClass {
           return this;
         }
 
-        private java.lang.Object name_ = "";
+        private java.lang.Object path_ = "";
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
-        public java.lang.String getName() {
-          java.lang.Object ref = name_;
+        public java.lang.String getPath() {
+          java.lang.Object ref = path_;
           if (!(ref instanceof java.lang.String)) {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
-            name_ = s;
+            path_ = s;
             return s;
           } else {
             return (java.lang.String) ref;
           }
         }
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
         public com.google.protobuf.ByteString
-            getNameBytes() {
-          java.lang.Object ref = name_;
+            getPathBytes() {
+          java.lang.Object ref = path_;
           if (ref instanceof String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
-            name_ = b;
+            path_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
-        public Builder setName(
+        public Builder setPath(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
   
-          name_ = value;
+          path_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
-        public Builder clearName() {
+        public Builder clearPath() {
           
-          name_ = getDefaultInstance().getName();
+          path_ = getDefaultInstance().getPath();
           onChanged();
           return this;
         }
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
-        public Builder setNameBytes(
+        public Builder setPathBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
           
-          name_ = value;
+          path_ = value;
           onChanged();
           return this;
         }
 
-        private java.lang.Object originalFileName_ = "";
+        private boolean isPreview_ ;
         /**
-         * <code>string originalFileName = 3;</code>
+         * <code>bool isPreview = 3;</code>
          */
-        public java.lang.String getOriginalFileName() {
-          java.lang.Object ref = originalFileName_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            originalFileName_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+        public boolean getIsPreview() {
+          return isPreview_;
         }
         /**
-         * <code>string originalFileName = 3;</code>
+         * <code>bool isPreview = 3;</code>
          */
-        public com.google.protobuf.ByteString
-            getOriginalFileNameBytes() {
-          java.lang.Object ref = originalFileName_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            originalFileName_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string originalFileName = 3;</code>
-         */
-        public Builder setOriginalFileName(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          originalFileName_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string originalFileName = 3;</code>
-         */
-        public Builder clearOriginalFileName() {
+        public Builder setIsPreview(boolean value) {
           
-          originalFileName_ = getDefaultInstance().getOriginalFileName();
+          isPreview_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string originalFileName = 3;</code>
+         * <code>bool isPreview = 3;</code>
          */
-        public Builder setOriginalFileNameBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        public Builder clearIsPreview() {
           
-          originalFileName_ = value;
-          onChanged();
-          return this;
-        }
-
-        private long size_ ;
-        /**
-         * <code>int64 size = 4;</code>
-         */
-        public long getSize() {
-          return size_;
-        }
-        /**
-         * <code>int64 size = 4;</code>
-         */
-        public Builder setSize(long value) {
-          
-          size_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int64 size = 4;</code>
-         */
-        public Builder clearSize() {
-          
-          size_ = 0L;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object contentType_ = "";
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public java.lang.String getContentType() {
-          java.lang.Object ref = contentType_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            contentType_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public com.google.protobuf.ByteString
-            getContentTypeBytes() {
-          java.lang.Object ref = contentType_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            contentType_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public Builder setContentType(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          contentType_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public Builder clearContentType() {
-          
-          contentType_ = getDefaultInstance().getContentType();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public Builder setContentTypeBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          contentType_ = value;
-          onChanged();
-          return this;
-        }
-
-        private boolean isPreviewImage_ ;
-        /**
-         * <code>bool isPreviewImage = 6;</code>
-         */
-        public boolean getIsPreviewImage() {
-          return isPreviewImage_;
-        }
-        /**
-         * <code>bool isPreviewImage = 6;</code>
-         */
-        public Builder setIsPreviewImage(boolean value) {
-          
-          isPreviewImage_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>bool isPreviewImage = 6;</code>
-         */
-        public Builder clearIsPreviewImage() {
-          
-          isPreviewImage_ = false;
-          onChanged();
-          return this;
-        }
-
-        private com.google.protobuf.ByteString bytes_ = com.google.protobuf.ByteString.EMPTY;
-        /**
-         * <code>bytes bytes = 7;</code>
-         */
-        public com.google.protobuf.ByteString getBytes() {
-          return bytes_;
-        }
-        /**
-         * <code>bytes bytes = 7;</code>
-         */
-        public Builder setBytes(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          bytes_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>bytes bytes = 7;</code>
-         */
-        public Builder clearBytes() {
-          
-          bytes_ = getDefaultInstance().getBytes();
+          isPreview_ = false;
           onChanged();
           return this;
         }
@@ -8188,49 +7784,19 @@ public final class ProductOuterClass {
       long getId();
 
       /**
-       * <code>string name = 2;</code>
+       * <code>string path = 2;</code>
        */
-      java.lang.String getName();
+      java.lang.String getPath();
       /**
-       * <code>string name = 2;</code>
+       * <code>string path = 2;</code>
        */
       com.google.protobuf.ByteString
-          getNameBytes();
+          getPathBytes();
 
       /**
-       * <code>string originalFileName = 3;</code>
+       * <code>bool isPreview = 3;</code>
        */
-      java.lang.String getOriginalFileName();
-      /**
-       * <code>string originalFileName = 3;</code>
-       */
-      com.google.protobuf.ByteString
-          getOriginalFileNameBytes();
-
-      /**
-       * <code>int64 size = 4;</code>
-       */
-      long getSize();
-
-      /**
-       * <code>string contentType = 5;</code>
-       */
-      java.lang.String getContentType();
-      /**
-       * <code>string contentType = 5;</code>
-       */
-      com.google.protobuf.ByteString
-          getContentTypeBytes();
-
-      /**
-       * <code>bool isPreviewImage = 6;</code>
-       */
-      boolean getIsPreviewImage();
-
-      /**
-       * <code>bytes bytes = 7;</code>
-       */
-      com.google.protobuf.ByteString getBytes();
+      boolean getIsPreview();
     }
     /**
      * Protobuf type {@code grpc.server.grpc_server.product.GetProductResponse.Image}
@@ -8246,12 +7812,8 @@ public final class ProductOuterClass {
       }
       private Image() {
         id_ = 0L;
-        name_ = "";
-        originalFileName_ = "";
-        size_ = 0L;
-        contentType_ = "";
-        isPreviewImage_ = false;
-        bytes_ = com.google.protobuf.ByteString.EMPTY;
+        path_ = "";
+        isPreview_ = false;
       }
 
       @java.lang.Override
@@ -8286,34 +7848,12 @@ public final class ProductOuterClass {
               case 18: {
                 java.lang.String s = input.readStringRequireUtf8();
 
-                name_ = s;
+                path_ = s;
                 break;
               }
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
+              case 24: {
 
-                originalFileName_ = s;
-                break;
-              }
-              case 32: {
-
-                size_ = input.readInt64();
-                break;
-              }
-              case 42: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                contentType_ = s;
-                break;
-              }
-              case 48: {
-
-                isPreviewImage_ = input.readBool();
-                break;
-              }
-              case 58: {
-
-                bytes_ = input.readBytes();
+                isPreview_ = input.readBool();
                 break;
               }
               default: {
@@ -8357,133 +7897,47 @@ public final class ProductOuterClass {
         return id_;
       }
 
-      public static final int NAME_FIELD_NUMBER = 2;
-      private volatile java.lang.Object name_;
+      public static final int PATH_FIELD_NUMBER = 2;
+      private volatile java.lang.Object path_;
       /**
-       * <code>string name = 2;</code>
+       * <code>string path = 2;</code>
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          path_ = s;
           return s;
         }
       }
       /**
-       * <code>string name = 2;</code>
+       * <code>string path = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getPathBytes() {
+        java.lang.Object ref = path_;
         if (ref instanceof java.lang.String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          path_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
 
-      public static final int ORIGINALFILENAME_FIELD_NUMBER = 3;
-      private volatile java.lang.Object originalFileName_;
+      public static final int ISPREVIEW_FIELD_NUMBER = 3;
+      private boolean isPreview_;
       /**
-       * <code>string originalFileName = 3;</code>
+       * <code>bool isPreview = 3;</code>
        */
-      public java.lang.String getOriginalFileName() {
-        java.lang.Object ref = originalFileName_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          originalFileName_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string originalFileName = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getOriginalFileNameBytes() {
-        java.lang.Object ref = originalFileName_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          originalFileName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int SIZE_FIELD_NUMBER = 4;
-      private long size_;
-      /**
-       * <code>int64 size = 4;</code>
-       */
-      public long getSize() {
-        return size_;
-      }
-
-      public static final int CONTENTTYPE_FIELD_NUMBER = 5;
-      private volatile java.lang.Object contentType_;
-      /**
-       * <code>string contentType = 5;</code>
-       */
-      public java.lang.String getContentType() {
-        java.lang.Object ref = contentType_;
-        if (ref instanceof java.lang.String) {
-          return (java.lang.String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          contentType_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string contentType = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getContentTypeBytes() {
-        java.lang.Object ref = contentType_;
-        if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          contentType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int ISPREVIEWIMAGE_FIELD_NUMBER = 6;
-      private boolean isPreviewImage_;
-      /**
-       * <code>bool isPreviewImage = 6;</code>
-       */
-      public boolean getIsPreviewImage() {
-        return isPreviewImage_;
-      }
-
-      public static final int BYTES_FIELD_NUMBER = 7;
-      private com.google.protobuf.ByteString bytes_;
-      /**
-       * <code>bytes bytes = 7;</code>
-       */
-      public com.google.protobuf.ByteString getBytes() {
-        return bytes_;
+      public boolean getIsPreview() {
+        return isPreview_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -8503,23 +7957,11 @@ public final class ProductOuterClass {
         if (id_ != 0L) {
           output.writeInt64(1, id_);
         }
-        if (!getNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        if (!getPathBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, path_);
         }
-        if (!getOriginalFileNameBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, originalFileName_);
-        }
-        if (size_ != 0L) {
-          output.writeInt64(4, size_);
-        }
-        if (!getContentTypeBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 5, contentType_);
-        }
-        if (isPreviewImage_ != false) {
-          output.writeBool(6, isPreviewImage_);
-        }
-        if (!bytes_.isEmpty()) {
-          output.writeBytes(7, bytes_);
+        if (isPreview_ != false) {
+          output.writeBool(3, isPreview_);
         }
         unknownFields.writeTo(output);
       }
@@ -8534,26 +7976,12 @@ public final class ProductOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeInt64Size(1, id_);
         }
-        if (!getNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        if (!getPathBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
         }
-        if (!getOriginalFileNameBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, originalFileName_);
-        }
-        if (size_ != 0L) {
+        if (isPreview_ != false) {
           size += com.google.protobuf.CodedOutputStream
-            .computeInt64Size(4, size_);
-        }
-        if (!getContentTypeBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, contentType_);
-        }
-        if (isPreviewImage_ != false) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(6, isPreviewImage_);
-        }
-        if (!bytes_.isEmpty()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(7, bytes_);
+            .computeBoolSize(3, isPreview_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -8573,18 +8001,10 @@ public final class ProductOuterClass {
         boolean result = true;
         result = result && (getId()
             == other.getId());
-        result = result && getName()
-            .equals(other.getName());
-        result = result && getOriginalFileName()
-            .equals(other.getOriginalFileName());
-        result = result && (getSize()
-            == other.getSize());
-        result = result && getContentType()
-            .equals(other.getContentType());
-        result = result && (getIsPreviewImage()
-            == other.getIsPreviewImage());
-        result = result && getBytes()
-            .equals(other.getBytes());
+        result = result && getPath()
+            .equals(other.getPath());
+        result = result && (getIsPreview()
+            == other.getIsPreview());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -8599,20 +8019,11 @@ public final class ProductOuterClass {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getId());
-        hash = (37 * hash) + NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getName().hashCode();
-        hash = (37 * hash) + ORIGINALFILENAME_FIELD_NUMBER;
-        hash = (53 * hash) + getOriginalFileName().hashCode();
-        hash = (37 * hash) + SIZE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getSize());
-        hash = (37 * hash) + CONTENTTYPE_FIELD_NUMBER;
-        hash = (53 * hash) + getContentType().hashCode();
-        hash = (37 * hash) + ISPREVIEWIMAGE_FIELD_NUMBER;
+        hash = (37 * hash) + PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getPath().hashCode();
+        hash = (37 * hash) + ISPREVIEW_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getIsPreviewImage());
-        hash = (37 * hash) + BYTES_FIELD_NUMBER;
-        hash = (53 * hash) + getBytes().hashCode();
+            getIsPreview());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -8748,17 +8159,9 @@ public final class ProductOuterClass {
           super.clear();
           id_ = 0L;
 
-          name_ = "";
+          path_ = "";
 
-          originalFileName_ = "";
-
-          size_ = 0L;
-
-          contentType_ = "";
-
-          isPreviewImage_ = false;
-
-          bytes_ = com.google.protobuf.ByteString.EMPTY;
+          isPreview_ = false;
 
           return this;
         }
@@ -8787,12 +8190,8 @@ public final class ProductOuterClass {
         public products.ProductOuterClass.GetProductResponse.Image buildPartial() {
           products.ProductOuterClass.GetProductResponse.Image result = new products.ProductOuterClass.GetProductResponse.Image(this);
           result.id_ = id_;
-          result.name_ = name_;
-          result.originalFileName_ = originalFileName_;
-          result.size_ = size_;
-          result.contentType_ = contentType_;
-          result.isPreviewImage_ = isPreviewImage_;
-          result.bytes_ = bytes_;
+          result.path_ = path_;
+          result.isPreview_ = isPreview_;
           onBuilt();
           return result;
         }
@@ -8844,26 +8243,12 @@ public final class ProductOuterClass {
           if (other.getId() != 0L) {
             setId(other.getId());
           }
-          if (!other.getName().isEmpty()) {
-            name_ = other.name_;
+          if (!other.getPath().isEmpty()) {
+            path_ = other.path_;
             onChanged();
           }
-          if (!other.getOriginalFileName().isEmpty()) {
-            originalFileName_ = other.originalFileName_;
-            onChanged();
-          }
-          if (other.getSize() != 0L) {
-            setSize(other.getSize());
-          }
-          if (!other.getContentType().isEmpty()) {
-            contentType_ = other.contentType_;
-            onChanged();
-          }
-          if (other.getIsPreviewImage() != false) {
-            setIsPreviewImage(other.getIsPreviewImage());
-          }
-          if (other.getBytes() != com.google.protobuf.ByteString.EMPTY) {
-            setBytes(other.getBytes());
+          if (other.getIsPreview() != false) {
+            setIsPreview(other.getIsPreview());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -8920,290 +8305,97 @@ public final class ProductOuterClass {
           return this;
         }
 
-        private java.lang.Object name_ = "";
+        private java.lang.Object path_ = "";
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
-        public java.lang.String getName() {
-          java.lang.Object ref = name_;
+        public java.lang.String getPath() {
+          java.lang.Object ref = path_;
           if (!(ref instanceof java.lang.String)) {
             com.google.protobuf.ByteString bs =
                 (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
-            name_ = s;
+            path_ = s;
             return s;
           } else {
             return (java.lang.String) ref;
           }
         }
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
         public com.google.protobuf.ByteString
-            getNameBytes() {
-          java.lang.Object ref = name_;
+            getPathBytes() {
+          java.lang.Object ref = path_;
           if (ref instanceof String) {
             com.google.protobuf.ByteString b = 
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
-            name_ = b;
+            path_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
         }
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
-        public Builder setName(
+        public Builder setPath(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
   
-          name_ = value;
+          path_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
-        public Builder clearName() {
+        public Builder clearPath() {
           
-          name_ = getDefaultInstance().getName();
+          path_ = getDefaultInstance().getPath();
           onChanged();
           return this;
         }
         /**
-         * <code>string name = 2;</code>
+         * <code>string path = 2;</code>
          */
-        public Builder setNameBytes(
+        public Builder setPathBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
           
-          name_ = value;
+          path_ = value;
           onChanged();
           return this;
         }
 
-        private java.lang.Object originalFileName_ = "";
+        private boolean isPreview_ ;
         /**
-         * <code>string originalFileName = 3;</code>
+         * <code>bool isPreview = 3;</code>
          */
-        public java.lang.String getOriginalFileName() {
-          java.lang.Object ref = originalFileName_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            originalFileName_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
+        public boolean getIsPreview() {
+          return isPreview_;
         }
         /**
-         * <code>string originalFileName = 3;</code>
+         * <code>bool isPreview = 3;</code>
          */
-        public com.google.protobuf.ByteString
-            getOriginalFileNameBytes() {
-          java.lang.Object ref = originalFileName_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            originalFileName_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string originalFileName = 3;</code>
-         */
-        public Builder setOriginalFileName(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          originalFileName_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string originalFileName = 3;</code>
-         */
-        public Builder clearOriginalFileName() {
+        public Builder setIsPreview(boolean value) {
           
-          originalFileName_ = getDefaultInstance().getOriginalFileName();
+          isPreview_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>string originalFileName = 3;</code>
+         * <code>bool isPreview = 3;</code>
          */
-        public Builder setOriginalFileNameBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        public Builder clearIsPreview() {
           
-          originalFileName_ = value;
-          onChanged();
-          return this;
-        }
-
-        private long size_ ;
-        /**
-         * <code>int64 size = 4;</code>
-         */
-        public long getSize() {
-          return size_;
-        }
-        /**
-         * <code>int64 size = 4;</code>
-         */
-        public Builder setSize(long value) {
-          
-          size_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>int64 size = 4;</code>
-         */
-        public Builder clearSize() {
-          
-          size_ = 0L;
-          onChanged();
-          return this;
-        }
-
-        private java.lang.Object contentType_ = "";
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public java.lang.String getContentType() {
-          java.lang.Object ref = contentType_;
-          if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            contentType_ = s;
-            return s;
-          } else {
-            return (java.lang.String) ref;
-          }
-        }
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public com.google.protobuf.ByteString
-            getContentTypeBytes() {
-          java.lang.Object ref = contentType_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            contentType_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public Builder setContentType(
-            java.lang.String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          contentType_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public Builder clearContentType() {
-          
-          contentType_ = getDefaultInstance().getContentType();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string contentType = 5;</code>
-         */
-        public Builder setContentTypeBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          contentType_ = value;
-          onChanged();
-          return this;
-        }
-
-        private boolean isPreviewImage_ ;
-        /**
-         * <code>bool isPreviewImage = 6;</code>
-         */
-        public boolean getIsPreviewImage() {
-          return isPreviewImage_;
-        }
-        /**
-         * <code>bool isPreviewImage = 6;</code>
-         */
-        public Builder setIsPreviewImage(boolean value) {
-          
-          isPreviewImage_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>bool isPreviewImage = 6;</code>
-         */
-        public Builder clearIsPreviewImage() {
-          
-          isPreviewImage_ = false;
-          onChanged();
-          return this;
-        }
-
-        private com.google.protobuf.ByteString bytes_ = com.google.protobuf.ByteString.EMPTY;
-        /**
-         * <code>bytes bytes = 7;</code>
-         */
-        public com.google.protobuf.ByteString getBytes() {
-          return bytes_;
-        }
-        /**
-         * <code>bytes bytes = 7;</code>
-         */
-        public Builder setBytes(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          bytes_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>bytes bytes = 7;</code>
-         */
-        public Builder clearBytes() {
-          
-          bytes_ = getDefaultInstance().getBytes();
+          isPreview_ = false;
           onChanged();
           return this;
         }
@@ -13395,83 +12587,79 @@ public final class ProductOuterClass {
     java.lang.String[] descriptorData = {
       "\n\rProduct.proto\022\037grpc.server.grpc_server" +
       ".product\032\037google/protobuf/timestamp.prot" +
-      "o\"\242\003\n\022SaveProductRequest\022L\n\007product\030\001 \001(" +
+      "o\"\321\002\n\022SaveProductRequest\022L\n\007product\030\001 \001(" +
       "\0132;.grpc.server.grpc_server.product.Save" +
       "ProductRequest.Product\022I\n\006images\030\002 \003(\01329" +
       ".grpc.server.grpc_server.product.SavePro" +
       "ductRequest.Image\032x\n\007Product\022\n\n\002id\030\001 \001(\003" +
       "\022\r\n\005title\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022\r\n\005" +
       "price\030\004 \001(\005\022\014\n\004city\030\005 \001(\t\022\020\n\010category\030\006 " +
-      "\001(\t\022\016\n\006userId\030\007 \001(\003\032y\n\005Image\022\014\n\004name\030\002 \001" +
-      "(\t\022\030\n\020originalFileName\030\003 \001(\t\022\014\n\004size\030\004 \001" +
-      "(\003\022\023\n\013contentType\030\005 \001(\t\022\026\n\016isPreviewImag" +
-      "e\030\006 \001(\010\022\r\n\005bytes\030\007 \001(\014\"!\n\023SaveProductRes" +
-      "ponse\022\n\n\002id\030\001 \001(\003\"#\n\025GetProductByIdReque" +
-      "st\022\n\n\002id\030\001 \001(\003\"+\n\031GetProductByUserIdRequ" +
-      "est\022\016\n\006userId\030\001 \001(\003\"(\n\026GetLikesProductRe" +
-      "quest\022\016\n\006userId\030\001 \001(\003\"8\n\026SaveLikeProduct" +
-      "Request\022\016\n\006userId\030\001 \001(\003\022\016\n\006prodId\030\002 \001(\003\"" +
-      "(\n\027SaveLikeProductResponse\022\r\n\005isApp\030\001 \001(" +
-      "\010\":\n\030RemoveLikeProductRequest\022\016\n\006userId\030" +
-      "\001 \001(\003\022\016\n\006prodId\030\002 \001(\003\"\373\003\n\022GetProductResp" +
-      "onse\022L\n\007product\030\001 \001(\0132;.grpc.server.grpc" +
-      "_server.product.GetProductResponse.Produ" +
-      "ct\022I\n\006images\030\002 \003(\01329.grpc.server.grpc_se" +
-      "rver.product.GetProductResponse.Image\032\303\001" +
-      "\n\007Product\022\n\n\002id\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\022\023\n\013" +
-      "description\030\003 \001(\t\022\r\n\005price\030\004 \001(\005\022\014\n\004city" +
-      "\030\005 \001(\t\022\020\n\010category\030\006 \001(\t\022\026\n\016previewImage" +
-      "Id\030\007 \001(\003\0221\n\rdateOfCreated\030\010 \001(\0132\032.google" +
-      ".protobuf.Timestamp\022\016\n\006userId\030\t \001(\003\032\205\001\n\005" +
-      "Image\022\n\n\002id\030\001 \001(\003\022\014\n\004name\030\002 \001(\t\022\030\n\020origi" +
-      "nalFileName\030\003 \001(\t\022\014\n\004size\030\004 \001(\003\022\023\n\013conte" +
-      "ntType\030\005 \001(\t\022\026\n\016isPreviewImage\030\006 \001(\010\022\r\n\005" +
-      "bytes\030\007 \001(\014\"!\n\023GetImageByIdRequest\022\n\n\002id" +
-      "\030\001 \001(\003\"0\n\033GetImagesByProductIdRequest\022\021\n" +
-      "\tproductId\030\001 \001(\003\"|\n\031FindAllByAttributeRe" +
-      "quest\022\016\n\006offset\030\001 \001(\005\022\r\n\005limit\030\002 \001(\005\022\021\n\t" +
-      "sortField\030\003 \001(\005\022\020\n\010category\030\004 \001(\t\022\r\n\005tit" +
-      "le\030\005 \001(\t\022\014\n\004city\030\006 \001(\t\"E\n\023GetPagesSizeRe" +
-      "quest\022\r\n\005limit\030\001 \001(\005\022\020\n\010category\030\002 \001(\t\022\r" +
-      "\n\005title\030\003 \001(\t\"!\n\021PagesSizeResponse\022\014\n\004si" +
-      "ze\030\001 \001(\0052\275\013\n\016ProductService\022z\n\rCreatePro" +
-      "duct\0223.grpc.server.grpc_server.product.S" +
-      "aveProductRequest\0324.grpc.server.grpc_ser" +
-      "ver.product.SaveProductResponse\022}\n\016GetPr" +
-      "oductById\0226.grpc.server.grpc_server.prod" +
-      "uct.GetProductByIdRequest\0323.grpc.server." +
-      "grpc_server.product.GetProductResponse\022\207" +
-      "\001\n\022FindAllByAttribute\022:.grpc.server.grpc" +
-      "_server.product.FindAllByAttributeReques" +
-      "t\0323.grpc.server.grpc_server.product.GetP" +
-      "roductResponse0\001\022\177\n\nFindByCity\022:.grpc.se" +
-      "rver.grpc_server.product.FindAllByAttrib" +
-      "uteRequest\0323.grpc.server.grpc_server.pro" +
-      "duct.GetProductResponse0\001\022x\n\014GetPagesSiz" +
-      "e\0224.grpc.server.grpc_server.product.GetP" +
-      "agesSizeRequest\0322.grpc.server.grpc_serve" +
-      "r.product.PagesSizeResponse\022\177\n\014GetImageB" +
-      "yId\0224.grpc.server.grpc_server.product.Ge" +
-      "tImageByIdRequest\0329.grpc.server.grpc_ser" +
-      "ver.product.GetProductResponse.Image\022\217\001\n" +
-      "\022GetAllImagesByProd\022<.grpc.server.grpc_s" +
-      "erver.product.GetImagesByProductIdReques" +
-      "t\0329.grpc.server.grpc_server.product.GetP" +
-      "roductResponse.Image0\001\022\201\001\n\014GetMyProduct\022" +
-      ":.grpc.server.grpc_server.product.GetPro" +
-      "ductByUserIdRequest\0323.grpc.server.grpc_s" +
-      "erver.product.GetProductResponse0\001\022\204\001\n\017S" +
-      "aveLikeProduct\0227.grpc.server.grpc_server" +
-      ".product.SaveLikeProductRequest\0328.grpc.s" +
-      "erver.grpc_server.product.SaveLikeProduc" +
-      "tResponse\022\210\001\n\021RemoveLikeProduct\0229.grpc.s" +
-      "erver.grpc_server.product.RemoveLikeProd" +
-      "uctRequest\0328.grpc.server.grpc_server.pro" +
-      "duct.SaveLikeProductResponse\022\201\001\n\017GetLike" +
-      "sProduct\0227.grpc.server.grpc_server.produ" +
-      "ct.GetLikesProductRequest\0323.grpc.server." +
-      "grpc_server.product.GetProductResponse0\001" +
-      "B\n\n\010productsb\006proto3"
+      "\001(\t\022\016\n\006userId\030\007 \001(\003\032(\n\005Image\022\014\n\004path\030\002 \001" +
+      "(\t\022\021\n\tisPreview\030\003 \001(\010\"!\n\023SaveProductResp" +
+      "onse\022\n\n\002id\030\001 \001(\003\"#\n\025GetProductByIdReques" +
+      "t\022\n\n\002id\030\001 \001(\003\"+\n\031GetProductByUserIdReque" +
+      "st\022\016\n\006userId\030\001 \001(\003\"(\n\026GetLikesProductReq" +
+      "uest\022\016\n\006userId\030\001 \001(\003\"8\n\026SaveLikeProductR" +
+      "equest\022\016\n\006userId\030\001 \001(\003\022\016\n\006prodId\030\002 \001(\003\"(" +
+      "\n\027SaveLikeProductResponse\022\r\n\005isApp\030\001 \001(\010" +
+      "\":\n\030RemoveLikeProductRequest\022\016\n\006userId\030\001" +
+      " \001(\003\022\016\n\006prodId\030\002 \001(\003\"\251\003\n\022GetProductRespo" +
+      "nse\022L\n\007product\030\001 \001(\0132;.grpc.server.grpc_" +
+      "server.product.GetProductResponse.Produc" +
+      "t\022I\n\006images\030\002 \003(\01329.grpc.server.grpc_ser" +
+      "ver.product.GetProductResponse.Image\032\303\001\n" +
+      "\007Product\022\n\n\002id\030\001 \001(\003\022\r\n\005title\030\002 \001(\t\022\023\n\013d" +
+      "escription\030\003 \001(\t\022\r\n\005price\030\004 \001(\005\022\014\n\004city\030" +
+      "\005 \001(\t\022\020\n\010category\030\006 \001(\t\022\026\n\016previewImageI" +
+      "d\030\007 \001(\003\0221\n\rdateOfCreated\030\010 \001(\0132\032.google." +
+      "protobuf.Timestamp\022\016\n\006userId\030\t \001(\003\0324\n\005Im" +
+      "age\022\n\n\002id\030\001 \001(\003\022\014\n\004path\030\002 \001(\t\022\021\n\tisPrevi" +
+      "ew\030\003 \001(\010\"!\n\023GetImageByIdRequest\022\n\n\002id\030\001 " +
+      "\001(\003\"0\n\033GetImagesByProductIdRequest\022\021\n\tpr" +
+      "oductId\030\001 \001(\003\"|\n\031FindAllByAttributeReque" +
+      "st\022\016\n\006offset\030\001 \001(\005\022\r\n\005limit\030\002 \001(\005\022\021\n\tsor" +
+      "tField\030\003 \001(\005\022\020\n\010category\030\004 \001(\t\022\r\n\005title\030" +
+      "\005 \001(\t\022\014\n\004city\030\006 \001(\t\"E\n\023GetPagesSizeReque" +
+      "st\022\r\n\005limit\030\001 \001(\005\022\020\n\010category\030\002 \001(\t\022\r\n\005t" +
+      "itle\030\003 \001(\t\"!\n\021PagesSizeResponse\022\014\n\004size\030" +
+      "\001 \001(\0052\275\013\n\016ProductService\022z\n\rCreateProduc" +
+      "t\0223.grpc.server.grpc_server.product.Save" +
+      "ProductRequest\0324.grpc.server.grpc_server" +
+      ".product.SaveProductResponse\022}\n\016GetProdu" +
+      "ctById\0226.grpc.server.grpc_server.product" +
+      ".GetProductByIdRequest\0323.grpc.server.grp" +
+      "c_server.product.GetProductResponse\022\207\001\n\022" +
+      "FindAllByAttribute\022:.grpc.server.grpc_se" +
+      "rver.product.FindAllByAttributeRequest\0323" +
+      ".grpc.server.grpc_server.product.GetProd" +
+      "uctResponse0\001\022\177\n\nFindByCity\022:.grpc.serve" +
+      "r.grpc_server.product.FindAllByAttribute" +
+      "Request\0323.grpc.server.grpc_server.produc" +
+      "t.GetProductResponse0\001\022x\n\014GetPagesSize\0224" +
+      ".grpc.server.grpc_server.product.GetPage" +
+      "sSizeRequest\0322.grpc.server.grpc_server.p" +
+      "roduct.PagesSizeResponse\022\177\n\014GetImageById" +
+      "\0224.grpc.server.grpc_server.product.GetIm" +
+      "ageByIdRequest\0329.grpc.server.grpc_server" +
+      ".product.GetProductResponse.Image\022\217\001\n\022Ge" +
+      "tAllImagesByProd\022<.grpc.server.grpc_serv" +
+      "er.product.GetImagesByProductIdRequest\0329" +
+      ".grpc.server.grpc_server.product.GetProd" +
+      "uctResponse.Image0\001\022\201\001\n\014GetMyProduct\022:.g" +
+      "rpc.server.grpc_server.product.GetProduc" +
+      "tByUserIdRequest\0323.grpc.server.grpc_serv" +
+      "er.product.GetProductResponse0\001\022\204\001\n\017Save" +
+      "LikeProduct\0227.grpc.server.grpc_server.pr" +
+      "oduct.SaveLikeProductRequest\0328.grpc.serv" +
+      "er.grpc_server.product.SaveLikeProductRe" +
+      "sponse\022\210\001\n\021RemoveLikeProduct\0229.grpc.serv" +
+      "er.grpc_server.product.RemoveLikeProduct" +
+      "Request\0328.grpc.server.grpc_server.produc" +
+      "t.SaveLikeProductResponse\022\201\001\n\017GetLikesPr" +
+      "oduct\0227.grpc.server.grpc_server.product." +
+      "GetLikesProductRequest\0323.grpc.server.grp" +
+      "c_server.product.GetProductResponse0\001B\n\n" +
+      "\010productsb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -13503,7 +12691,7 @@ public final class ProductOuterClass {
     internal_static_grpc_server_grpc_server_product_SaveProductRequest_Image_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_server_grpc_server_product_SaveProductRequest_Image_descriptor,
-        new java.lang.String[] { "Name", "OriginalFileName", "Size", "ContentType", "IsPreviewImage", "Bytes", });
+        new java.lang.String[] { "Path", "IsPreview", });
     internal_static_grpc_server_grpc_server_product_SaveProductResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_grpc_server_grpc_server_product_SaveProductResponse_fieldAccessorTable = new
@@ -13563,7 +12751,7 @@ public final class ProductOuterClass {
     internal_static_grpc_server_grpc_server_product_GetProductResponse_Image_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_grpc_server_grpc_server_product_GetProductResponse_Image_descriptor,
-        new java.lang.String[] { "Id", "Name", "OriginalFileName", "Size", "ContentType", "IsPreviewImage", "Bytes", });
+        new java.lang.String[] { "Id", "Path", "IsPreview", });
     internal_static_grpc_server_grpc_server_product_GetImageByIdRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_grpc_server_grpc_server_product_GetImageByIdRequest_fieldAccessorTable = new
