@@ -1,5 +1,6 @@
 package com.example.sellars.service.product;
 
+import com.example.sellars.dto.CustomMultipartFile;
 import com.example.sellars.dto.Product;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,7 +16,7 @@ public interface ProductService {
     void addMany(Principal principal, List<MultipartFile> files);
 
     void deleteProduct(Long id);
-    MultipartFile getImageById(Long id) throws IOException, InterruptedException;
+    CustomMultipartFile getImageById(Long id) throws IOException, InterruptedException;
 
     Product getProductById(Long id) throws IOException, InterruptedException;
 

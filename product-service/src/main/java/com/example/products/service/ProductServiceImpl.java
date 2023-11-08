@@ -2,10 +2,12 @@ package com.example.products.service;
 
 import com.example.products.model.Image;
 import com.example.products.model.Product;
+import com.example.products.repository.ImageRepository;
 import com.example.products.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Hibernate;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -21,7 +23,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
-    private final ImageService service;
+    private final ImageRepository repository;
 
 
     private List<Product> getByCity(String city, Integer offset, Integer limit,
@@ -39,6 +41,18 @@ public class ProductServiceImpl implements ProductService {
         } else {
             return productRepository.findAllByCityContaining(city, PageRequest.of(offset, limit, Sort.by(sort, sorting)));
         }
+    }
+    @Override
+    public List<Image> getImagesByProdId(Long prod) {
+        List<Image> images = repository.getImagesByProduct_Id(prod);
+        return images;
+    }
+
+    @Override
+    public Image getImageById(Long imageId) {
+        Image image = repository.getReferenceById(imageId);
+        Hibernate.initialize(image);
+        return image;
     }
 
 
@@ -134,7 +148,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Long id) {
         Product product = productRepository.findById(id).orElse(null);
-//        loadImagesToProduct(product);
+        assert product != null;
+        Hibernate.initialize(product.getImages());
         return product;
     }
 
@@ -160,7 +175,9 @@ public class ProductServiceImpl implements ProductService {
             sort = Sort.Direction.ASC;
         }
         List<Product> products = getByCategoryAndTitle(offset, limit, sorting, sort, category, title);
-        products.stream().peek(product -> product.setImages(service.getImagesByProdId(product.getId())));
+        for (Product product : products) {
+            Hibernate.initialize(product.getImages());
+        }
         return products;
     }
 
@@ -185,7 +202,9 @@ public class ProductServiceImpl implements ProductService {
             sort = Sort.Direction.ASC;
         }
         List<Product> products = getByCity(city, offset, limit, sorting, sort, category, title);
-//        products.forEach(this::loadImagesToProduct);
+        for (Product product : products) {
+            Hibernate.initialize(product.getImages());
+        }
         return products;
     }
 
@@ -223,6 +242,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getMyProduct(Long userId) {
         List<Product> products = productRepository.findAllByUserId(userId);
 //        products.forEach(this::loadImagesToProduct);
+        for (Product product : products) {
+            Hibernate.initialize(product.getImages());
+        }
         return products;
     }
 
@@ -230,6 +252,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getLikesProduct(Long userId) {
         List<Product> products = productRepository.findAllByPreferUsersContains(userId);
 //        products.forEach(this::loadImagesToProduct);
+        for (Product product : products) {
+            Hibernate.initialize(product.getImages());
+        }
         return products;
     }
 }

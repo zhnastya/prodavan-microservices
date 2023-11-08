@@ -78,9 +78,11 @@ public class MyRoomServiceImpl implements MyRoomService {
     @SneakyThrows
     @Override
     public void updateProduct(Long id, Product product, List<MultipartFile> files) {
-        if (!files.isEmpty()) {
-            product.setImages(files);
-        }
+//        List<CustomMultipartFile> files1 = new ArrayList<>();
+//        if (!files.isEmpty()) {
+//            files.forEach(file -> files1.add(new CustomMultipartFile()));
+//            product.setImages(files);
+//        }
     }
 
 

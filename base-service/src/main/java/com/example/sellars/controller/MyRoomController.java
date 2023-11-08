@@ -20,6 +20,7 @@ import java.security.GeneralSecurityException;
 import java.security.Principal;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Set;
 
 
 @Controller
@@ -109,11 +110,11 @@ public class MyRoomController {
     }
 
     @GetMapping("/like-products")
-    public String getLikeProducts(Principal principal, Model model) {
+    public String getLikeProducts(Principal principal, Model model) throws IOException, InterruptedException {
         log.info("Get запрос избранных товаров пользователя - " + principal.getName());
-//        Set<Product> products = productService.getLikesProduct(principal);
+        Set<Product> products = productService.getLikesProduct(principal);
         model.addAttribute("user", userService.getUserByEmail(principal.getName()));
-//        model.addAttribute("products", products);
+        model.addAttribute("products", products);
         return "likes-product";
     }
 
@@ -127,7 +128,7 @@ public class MyRoomController {
 
     @PutMapping("/change/user")
     public String updateUser(@RequestParam(value = "file", required = false) MultipartFile file,
-                             @Valid User user, Principal principal){
+                             @Valid User user, Principal principal) {
         log.info("Запрос на изменение пользователя - " + principal.getName());
         myRoomService.updateUser(principal, user, file);
         return "redirect:/my-room";
@@ -141,7 +142,7 @@ public class MyRoomController {
     }
 
     @PostMapping("/change/avatar")
-    public String updateAvatar(@RequestParam(value = "file", required = false) MultipartFile file, Principal principal){
+    public String updateAvatar(@RequestParam(value = "file", required = false) MultipartFile file, Principal principal) {
         log.info("Запрос на изменение аватара пользователя - " + principal.getName());
         myRoomService.changeAvatar(principal, file);
         return "redirect:/my-room";
@@ -168,7 +169,7 @@ public class MyRoomController {
 
 
     @PostMapping("/create/many")
-    public String createMany(@RequestParam("files") List<MultipartFile> files, Principal principal){
+    public String createMany(@RequestParam("files") List<MultipartFile> files, Principal principal) {
         productService.addMany(principal, files);
         return "redirect:/my-room";
     }

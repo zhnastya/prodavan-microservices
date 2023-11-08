@@ -1,21 +1,27 @@
-package com.example.sellars.configurations;
+package com.example.sellars.dto;
 
+import lombok.Data;
 import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.nio.file.Path;
 
+@Data
 public class CustomMultipartFile implements MultipartFile {
+    private final Long id;
+    private final boolean isPreview;
     private final byte[] content;
     private final String contentType;
     private final String originalName;
-    public CustomMultipartFile(byte[] content, String contentType, String originalName){
+
+    public CustomMultipartFile(Long id, boolean isPreview, byte[] content, String contentType, String originalName) {
+        this.id = id;
+        this.isPreview = isPreview;
         this.content = content;
         this.contentType = contentType;
         this.originalName = originalName;
     }
-
 
     @Override
     public String getName() {

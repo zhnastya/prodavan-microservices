@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -22,11 +21,11 @@ public class Product {
     private String city;
     private String category;
     private Long previewImageId;
-    private List<MultipartFile> images = new ArrayList<>();
+    private List<CustomMultipartFile> images = new ArrayList<>();
     private LocalDateTime dateOfCreated;
     private User user;
 
-    public void addImage(MultipartFile image){
+    public void addImage(CustomMultipartFile image){
         images.add(image);
     }
 }

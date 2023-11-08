@@ -1,5 +1,5 @@
 package com.example.sellars.service.yandex;
-import com.example.sellars.configurations.CustomMultipartFile;
+import com.example.sellars.dto.CustomMultipartFile;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,6 @@ import java.nio.charset.StandardCharsets;
 public class YandexPhoto {
     public String savePhotos(MultipartFile file) throws IOException, InterruptedException, URISyntaxException {
         HttpClient client = HttpClient.newHttpClient();
-
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://cloud-api.yandex.net/v1/disk/resources/upload?path=%2FPhotos%2F"+
                         file.getOriginalFilename()+"&overwrite=true&fields=name,_embedded.items.path."))
@@ -40,7 +39,7 @@ public class YandexPhoto {
         return path2.substring(5);
     }
 
-    public MultipartFile loadPhotos(String path2) throws IOException, InterruptedException {
+    public CustomMultipartFile loadPhotos(Long id, boolean isPreview, String path2) throws IOException, InterruptedException {
         String urlEncoder = URLEncoder.encode(path2, StandardCharsets.UTF_8);
         HttpClient client = HttpClient.newHttpClient();
 
@@ -61,6 +60,7 @@ public class YandexPhoto {
                 .build();
         HttpResponse<String> response2 = client.send(request2, HttpResponse.BodyHandlers.ofString());
         String newLocation = response2.headers().firstValue("location").orElse("");
+
         HttpRequest request3 = HttpRequest.newBuilder()
                 .uri(URI.create(newLocation))
                 .GET()
@@ -68,7 +68,7 @@ public class YandexPhoto {
         HttpResponse<String> response3 = client.send(request3, HttpResponse.BodyHandlers.ofString());
         HttpHeaders headers = response3.headers();
 
-        return new CustomMultipartFile(response3.body().getBytes(StandardCharsets.UTF_8),
+        return new CustomMultipartFile(id, isPreview, response3.body().getBytes(StandardCharsets.UTF_8),
                 headers.firstValue("content-type").orElse(""), path2.substring(8));
     }
 }

@@ -13,9 +13,9 @@
                 <#list images as img>
                     <div class="carousel-item <#if img?index == 0>active</#if>" style="height: 200px">
                         <div class="carousel-item__image d-flex justify-content-center w-100 h-100">
-                            <img src="/images/${img.id}" class="d-block h-100" />
+                            <img src="/images/${img.id}" alt="Person holding a cat" class="d-block h-100" />
                         </div>
-                        <img src="/images/${img.id}" class="back-image" />
+                        <img src="/images/${img.id}" alt="Person holding a cat" class="back-image" />
                     </div>
                 </#list>
             </div>

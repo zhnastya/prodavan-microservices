@@ -1,5 +1,6 @@
 package com.example.sellars.controller;
 
+import com.example.sellars.dto.CustomMultipartFile;
 import com.example.sellars.exeption.NotFoundException;
 import com.example.sellars.service.product.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -25,12 +25,11 @@ public class ImageController {
 
     @GetMapping("/{id}")
     private ResponseEntity<?> getImageById(@PathVariable long id) throws IOException, InterruptedException {
-        MultipartFile imageForProduct = service.getImageById(id);
+        CustomMultipartFile imageForProduct = service.getImageById(id);
         if (imageForProduct != null) {
-            log.info("Отправлена фотография с id - " + id);
             ResponseEntity<?> entity =  ResponseEntity.ok()
                     .header("fileName", imageForProduct.getOriginalFilename())
-                    .contentType(MediaType.valueOf(imageForProduct.getContentType()))
+                    .contentType(MediaType.IMAGE_PNG)
                     .contentLength(imageForProduct.getSize())
                     .body(new InputStreamResource(new ByteArrayInputStream(imageForProduct.getBytes())));
             return entity;

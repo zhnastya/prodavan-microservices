@@ -1,5 +1,6 @@
 package com.example.sellars.service.product;
 
+import com.example.sellars.dto.CustomMultipartFile;
 import com.example.sellars.dto.Product;
 import com.example.sellars.dto.User;
 import com.example.sellars.service.user.UserService;
@@ -96,14 +97,15 @@ public class ProductServiceImpl implements ProductService {
         product.setPreviewImageId(responseProduct.getPreviewImageId());
         product.setUser(service.getUserById(responseProduct.getUserId()));
         for (GetProductResponse.Image image : response.getImagesList()) {
-            MultipartFile image1 = toImageEntity(image);
+            CustomMultipartFile image1 = toImageEntity(image);
             product.addImage(image1);
         }
         return product;
     }
 
-    private MultipartFile toImageEntity(GetProductResponse.Image imageResponse) throws IOException, InterruptedException {
-        return photoService.loadPhotos(imageResponse.getPath());
+    private CustomMultipartFile toImageEntity(GetProductResponse.Image imageResponse) throws IOException, InterruptedException {
+        return photoService.loadPhotos(imageResponse.getId(),
+                imageResponse.getIsPreview(), imageResponse.getPath());
     }
 
 
@@ -128,7 +130,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public MultipartFile getImageById(Long id) throws IOException, InterruptedException {
+    public CustomMultipartFile getImageById(Long id) throws IOException, InterruptedException {
         GetImageByIdRequest request = GetImageByIdRequest.newBuilder().setId(id).build();
         GetProductResponse.Image imageResponse = stub.getImageById(request);
         return toImageEntity(imageResponse);
