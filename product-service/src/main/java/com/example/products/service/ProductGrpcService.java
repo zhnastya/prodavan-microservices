@@ -19,7 +19,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBase {
     private final ProductService service;
-    private final ImageService serviceImg;
 
     private Image toImageEntity(SaveProductRequest.Image file){
         Image imageForProduct = new Image();
@@ -101,7 +100,7 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
     @Override
     public void getAllImagesByProd(GetImagesByProductIdRequest request,
                                    StreamObserver<GetProductResponse.Image> responseObserver) {
-        Iterator<Image> images = serviceImg.getImagesByProdId(request.getProductId()).iterator();
+        Iterator<Image> images = service.getImagesByProdId(request.getProductId()).iterator();
         while (images.hasNext()){
             GetProductResponse.Image response = toIterableEntity(images.next());
             responseObserver.onNext(response);
@@ -187,7 +186,7 @@ public class ProductGrpcService extends ProductServiceGrpc.ProductServiceImplBas
     @Override
     public void getImageById(GetImageByIdRequest request,
                              StreamObserver<GetProductResponse.Image> response){
-        Image image = serviceImg.getImageById(request.getId());
+        Image image = service.getImageById(request.getId());
         GetProductResponse.Image response1 = toIterableEntity(image);
         response.onNext(response1);
         response.onCompleted();

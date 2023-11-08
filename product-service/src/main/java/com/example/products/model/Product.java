@@ -45,7 +45,7 @@ public class Product {
     @Column(name = "preview_image_id")
     private Long previewImageId;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,
             mappedBy = "product")
     private List<Image> images = new ArrayList<>();
     private Long userId;

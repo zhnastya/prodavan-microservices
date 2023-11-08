@@ -16,6 +16,8 @@ public interface ProductService {
     void deleteProduct(Long id);
 
     Product getProductById(Long id);
+    List<Image> getImagesByProdId(Long prod);
+    Image getImageById(Long imageId);
 
     List<Product> findAllByAttribute(Integer offset, Integer limit,
                                      Integer sortField, String category, String title);
